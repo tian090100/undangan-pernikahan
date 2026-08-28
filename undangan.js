@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const body = document.body;
   const cover = document.getElementById('cover');
   const invitation = document.getElementById('invitation');
+  const music = document.getElementById('background-music');
+  const musicButton = document.getElementById('music-button');
   const guest = new URLSearchParams(window.location.search).get('to');
   if (guest) document.getElementById('guest-name').textContent = guest.slice(0, 60);
 
@@ -9,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cover.classList.add('opened');
     body.classList.remove('locked');
     invitation.setAttribute('aria-hidden', 'false');
+    music.play().catch(() => updateMusicButton(false));
     setTimeout(() => document.getElementById('home').scrollIntoView(), 500);
   });
 
@@ -99,9 +102,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  document.getElementById('music-button').addEventListener('click', (event) => {
-    event.currentTarget.classList.toggle('playing');
-    event.currentTarget.textContent = event.currentTarget.classList.contains('playing') ? '♫' : '♪';
-    event.currentTarget.title = 'Tombol musik siap dihubungkan dengan lagu pilihan pelanggan';
+  const updateMusicButton = (isPlaying) => {
+    musicButton.classList.toggle('playing', isPlaying);
+    musicButton.textContent = isPlaying ? '♫' : '♪';
+    musicButton.title = isPlaying ? 'Jeda musik' : 'Putar musik';
+    musicButton.setAttribute('aria-label', musicButton.title);
+  };
+  music.addEventListener('play', () => updateMusicButton(true));
+  music.addEventListener('pause', () => updateMusicButton(false));
+  musicButton.addEventListener('click', () => {
+    if (music.paused) music.play().catch(() => updateMusicButton(false));
+    else music.pause();
   });
 });

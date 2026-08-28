@@ -1,11 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
   const guest = new URLSearchParams(window.location.search).get('to');
+  const music = document.getElementById('background-music');
+  const musicControl = document.getElementById('music-control');
   if (guest) document.getElementById('guest-name').textContent = guest.slice(0, 60);
 
   document.getElementById('open-button').addEventListener('click', () => {
     document.getElementById('cover').classList.add('opened');
     document.body.classList.remove('locked');
     document.getElementById('invitation').setAttribute('aria-hidden', 'false');
+    music.play().catch(() => updateMusicControl(false));
   });
 
   const weddingDate = new Date('2027-02-20T09:00:00+07:00').getTime();
@@ -79,8 +82,16 @@ document.addEventListener('DOMContentLoaded', () => {
   lightbox.querySelector('button').addEventListener('click', () => lightbox.close());
   lightbox.addEventListener('click', (event) => event.target === lightbox && lightbox.close());
 
-  document.getElementById('music-control').addEventListener('click', (event) => {
-    event.currentTarget.classList.toggle('active');
-    event.currentTarget.title = 'Siap dihubungkan dengan musik pilihan pasangan';
+  const updateMusicControl = (isPlaying) => {
+    musicControl.classList.toggle('active', isPlaying);
+    musicControl.textContent = isPlaying ? '♫' : '♪';
+    musicControl.title = isPlaying ? 'Jeda musik' : 'Putar musik';
+    musicControl.setAttribute('aria-label', musicControl.title);
+  };
+  music.addEventListener('play', () => updateMusicControl(true));
+  music.addEventListener('pause', () => updateMusicControl(false));
+  musicControl.addEventListener('click', () => {
+    if (music.paused) music.play().catch(() => updateMusicControl(false));
+    else music.pause();
   });
 });

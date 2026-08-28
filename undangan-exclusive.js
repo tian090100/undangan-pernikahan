@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   const cover = document.getElementById('lux-cover');
   const invitation = document.getElementById('lux-invitation');
+  const music = document.getElementById('background-music');
+  const soundControl = document.getElementById('sound-control');
   const guestName = new URLSearchParams(window.location.search).get('to');
   if (guestName) document.getElementById('lux-guest-name').textContent = guestName.slice(0, 60);
 
@@ -8,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cover.classList.add('opened');
     document.body.classList.remove('is-locked');
     invitation.setAttribute('aria-hidden', 'false');
+    music.play().catch(() => updateMusicControl(false));
   });
 
   const eventTime = new Date('2026-12-12T09:00:00+07:00').getTime();
@@ -88,9 +91,17 @@ document.addEventListener('DOMContentLoaded', () => {
     if (event.target === lightbox) lightbox.close();
   });
 
-  document.getElementById('sound-control').addEventListener('click', (event) => {
-    event.currentTarget.classList.toggle('active');
-    event.currentTarget.querySelector('small').textContent = event.currentTarget.classList.contains('active') ? 'On' : 'Sound';
-    event.currentTarget.title = 'Kontrol siap dihubungkan dengan lagu pilihan pelanggan';
+  const updateMusicControl = (isPlaying) => {
+    soundControl.classList.toggle('active', isPlaying);
+    soundControl.querySelector('span').textContent = isPlaying ? '♫' : '♪';
+    soundControl.querySelector('small').textContent = isPlaying ? 'On' : 'Off';
+    soundControl.title = isPlaying ? 'Jeda musik' : 'Putar musik';
+    soundControl.setAttribute('aria-label', soundControl.title);
+  };
+  music.addEventListener('play', () => updateMusicControl(true));
+  music.addEventListener('pause', () => updateMusicControl(false));
+  soundControl.addEventListener('click', () => {
+    if (music.paused) music.play().catch(() => updateMusicControl(false));
+    else music.pause();
   });
 });
