@@ -8,7 +8,7 @@
   <rect class="bg" width="2600" height="1900"/>
 
   <!-- Workspace title -->
-  <text x="70" y="80" class="body" font-size="18" font-weight="bold" fill="#101713">D'NOVA STUDIO · WEDDING INVITATION WORKSPACE</text>
+  <text x="70" y="80" class="body" font-size="18" font-weight="bold" fill="#101713">DAPRITA · WEDDING INVITATION WORKSPACE</text>
   <text x="70" y="110" class="copy muted">Starter canvas · Foundations · Components · Mobile · Desktop</text>
 
   <!-- Foundations -->
@@ -85,5 +85,5 @@
     <rect x="35" y="515" width="630" height="58" class="paper" rx="10"/><text x="55" y="550" class="copy dark">Tip: gunakan Auto Layout dan Components sebelum desain diserahkan.</text>
   </g>
 
-  <text x="70" y="1840" class="tiny muted">D'Nova Studio · Figma starter workspace · Import SVG, then convert each named group to a native frame.</text>
+  <text x="70" y="1840" class="tiny muted">DAPRITA · Figma starter workspace · Import SVG, then convert each named group to a native frame.</text>
 </svg>

@@ -94,6 +94,34 @@ button {
   color: var(--primary-dark);
 }
 
+.brand-logo {
+  position: relative;
+  display: inline-block;
+  flex: 0 0 auto;
+  padding: 4px 0 7px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.75rem, 2.6vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: .13em;
+  color: #9a5139;
+  background: linear-gradient(180deg, #6e3528 8%, #c97755 48%, #713528 92%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 7px 18px rgba(126, 64, 46, .11);
+}
+
+.brand-logo::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: .13em;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #c58366 18% 82%, transparent);
+}
+
 .menu-toggle {
   display: none;
   width: 44px;
@@ -372,7 +400,7 @@ button {
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 24px;
 }
 
@@ -463,6 +491,10 @@ button {
 
 .card-three {
   background: linear-gradient(145deg, #120f0e, #4b1714);
+}
+
+.card-four {
+  background: linear-gradient(145deg, #e4d5bf, #8f684b);
 }
 
 .phone-mockup {
@@ -585,6 +617,27 @@ button {
 
 .screen-batak > strong { color: #d4ae64; }
 
+.screen-jawa {
+  color: #f7eddd;
+  background:
+    radial-gradient(ellipse at center, transparent 36%, rgba(191,154,95,.28) 38% 41%, transparent 43%) 0 0/42px 42px,
+    linear-gradient(145deg, #38281e, #704c36);
+}
+
+.screen-gunungan {
+  display: grid;
+  place-items: center;
+  width: 105px;
+  height: 135px;
+  margin: 24px 0 8px;
+  color: #f6ead8;
+  border: 1px solid #c7a267;
+  background: linear-gradient(145deg, #9a5139, #543429);
+  clip-path: polygon(50% 0,92% 72%,75% 100%,25% 100%,8% 72%);
+  font-family: serif;
+  font-size: 1.7rem;
+}
+
 .portfolio-demo {
   position: relative;
   z-index: 2;
@@ -603,7 +656,8 @@ button {
 }
 
 .card-two .portfolio-demo,
-.card-three .portfolio-demo {
+.card-three .portfolio-demo,
+.card-four .portfolio-demo {
   border: 1px solid rgba(255,255,255,.2);
   background: rgba(10, 12, 10, 0.72);
 }
@@ -784,6 +838,11 @@ button {
 
 .footer .brand {
   color: #fbe8e1;
+}
+
+.footer-inner > div:first-child > p {
+  max-width: 420px;
+  margin-top: 18px;
 }
 
 .contact-box {

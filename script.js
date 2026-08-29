@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const whatsappLink = document.getElementById('whatsapp-link');
       if (!packageName || !whatsappLink) return;
       event.preventDefault();
-      const message = `Halo D'Nova Studio, saya tertarik dengan Paket Undangan ${packageName}. Bisa dibantu konsultasi?`;
+      const message = `Halo DAPRITA, saya tertarik dengan Paket Undangan ${packageName}. Bisa dibantu konsultasi?`;
       const whatsappUrl = `https://wa.me/6282229377438?text=${encodeURIComponent(message)}`;
       whatsappLink.href = whatsappUrl;
       whatsappLink.textContent = `Konsultasikan Paket ${packageName} via WhatsApp`;
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
     const message = [
-      `Halo D'Nova Studio, saya ingin konsultasi kebutuhan pernikahan.`,
+      `Halo DAPRITA, saya ingin konsultasi kebutuhan pernikahan.`,
       `Nama: ${data.get('name')}`,
       `Tanggal acara: ${data.get('date')}`,
       `Lokasi: ${data.get('location')}`,

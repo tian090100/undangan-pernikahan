@@ -1,4 +1,4 @@
-# D'Nova Wedding Invitation — Figma Workspace
+# DAPRITA Wedding Invitation — Figma Workspace
 
 Template ini dirancang sebagai titik awal desain undangan digital sebelum diimplementasikan ke HTML, CSS, dan JavaScript.
 

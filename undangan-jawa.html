@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Preview undangan pernikahan Basic bertema Jawa." />
+  <meta name="theme-color" content="#30251c" />
+  <title>Raka & Sekar — Pawiwahan Jawa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="undangan-jawa.css" />
+</head>
+<body class="locked">
+  <section class="cover" id="cover" aria-labelledby="cover-title">
+    <div class="cover-photo" aria-hidden="true"></div>
+    <div class="cover-card">
+      <div class="kawung-strip" aria-hidden="true"></div>
+      <p class="eyebrow">Pawiwahan</p>
+      <div class="gunungan" aria-hidden="true"><span>ꦫ</span></div>
+      <p>The Wedding of</p>
+      <h1 id="cover-title">Raka <i>&</i> Sekar</h1>
+      <time>18 · 07 · 2027</time>
+      <div class="guest"><small>Kepada Yth.</small><strong id="guest-name">Tamu Undangan</strong></div>
+      <button class="primary-button" id="open-button" type="button">Buka Undangan <span>↗</span></button>
+      <p class="javanese-note">Kanthi suka bingah, kula aturi rawuh</p>
+    </div>
+  </section>
+
+  <main id="invitation" aria-hidden="true">
+    <header class="hero" id="home">
+      <nav><a href="#mempelai">Mempelai</a><a href="#acara">Acara</a><a href="#galeri">Galeri</a><a href="#rsvp">RSVP</a></nav>
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Pawiwahan · Yogyakarta</p>
+        <h2>Raka<br /><i>&</i> Sekar</h2>
+        <p>Dengan memohon rahmat dan rida Tuhan Yang Maha Esa, kami bermaksud menyelenggarakan pernikahan putra-putri kami.</p>
+        <div class="hero-date"><strong>18</strong><span>Juli<br />2027</span></div>
+      </div>
+      <div class="hero-photo" role="img" aria-label="Foto pasangan Raka dan Sekar"><span>ꦫ ꦱ</span></div>
+    </header>
+
+    <section class="quote section reveal">
+      <span class="section-mark">01</span>
+      <blockquote>“Tresna iku dudu mung nyawang siji lan sijiné, nanging nyawang bebarengan menyang arah kang padha.”</blockquote>
+      <p>Cinta adalah berjalan bersama menuju arah yang sama.</p>
+    </section>
+
+    <section class="couple section" id="mempelai">
+      <div class="section-title reveal"><p class="eyebrow">Pengantin</p><h2>Putra & Putri</h2></div>
+      <div class="couple-grid">
+        <article class="person reveal"><div class="portrait groom"></div><p>Putra pertama dari</p><h3>Raka Aditya<br />Pranawa</h3><span>Bapak Budi Pranawa<br />& Ibu Ratih Wulandari</span></article>
+        <div class="ampersand" aria-hidden="true">&</div>
+        <article class="person reveal"><div class="portrait bride"></div><p>Putri kedua dari</p><h3>Sekar Ayu<br />Puspitasari</h3><span>Bapak Hadi Puspito<br />& Ibu Endang Lestari</span></article>
+      </div>
+    </section>
+
+    <section class="countdown-wrap">
+      <div class="countdown-copy reveal"><p class="eyebrow">Menuju Hari Bahagia</p><h2>Save the Date</h2></div>
+      <div class="countdown" aria-label="Hitung mundur acara"><div><strong id="days">00</strong><span>Hari</span></div><div><strong id="hours">00</strong><span>Jam</span></div><div><strong id="minutes">00</strong><span>Menit</span></div><div><strong id="seconds">00</strong><span>Detik</span></div></div>
+    </section>
+
+    <section class="events section" id="acara">
+      <div class="section-title reveal"><p class="eyebrow">Rangkaian Acara</p><h2>Wanci Pawiwahan</h2></div>
+      <div class="event-grid">
+        <article class="event-card reveal"><span>01</span><p class="eyebrow">Akad Nikah</p><h3>Minggu, 18 Juli 2027</h3><strong>08.00 WIB</strong><p>Pendopo Agung Royal Ambarrukmo<br />Yogyakarta</p><a href="https://maps.google.com/?q=Royal+Ambarrukmo+Yogyakarta" target="_blank" rel="noopener noreferrer">Lihat Lokasi ↗</a></article>
+        <article class="event-card dark reveal"><span>02</span><p class="eyebrow">Resepsi</p><h3>Minggu, 18 Juli 2027</h3><strong>11.00–13.00 WIB</strong><p>Pendopo Agung Royal Ambarrukmo<br />Yogyakarta</p><a href="https://maps.google.com/?q=Royal+Ambarrukmo+Yogyakarta" target="_blank" rel="noopener noreferrer">Lihat Lokasi ↗</a></article>
+      </div>
+      <a class="calendar-link reveal" id="calendar-link" href="#">+ Simpan ke Google Calendar</a>
+    </section>
+
+    <section class="gallery section" id="galeri">
+      <div class="section-title light reveal"><p class="eyebrow">Potret Kami</p><h2>Galeri</h2><p>Paket Basic · maksimal 5 foto pilihan</p></div>
+      <div class="gallery-grid">
+        <button class="gallery-item wide reveal" type="button"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1300&q=88" alt="Pasangan dalam suasana pernikahan" /></button>
+        <button class="gallery-item reveal" type="button"><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=88" alt="Potret calon pengantin wanita" /></button>
+        <button class="gallery-item reveal" type="button"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=88" alt="Potret calon pengantin pria" /></button>
+      </div>
+    </section>
+
+    <section class="rsvp section" id="rsvp">
+      <div class="rsvp-copy reveal"><p class="eyebrow">Konfirmasi Kehadiran</p><h2>RSVP & Ucapan</h2><p>Kehadiran serta doa restu Anda merupakan anugerah terindah bagi kami.</p></div>
+      <form id="rsvp-form" class="reveal"><label>Nama<input name="name" required autocomplete="name" placeholder="Nama lengkap" /></label><label>Kehadiran<select name="attendance" required><option value="">Pilih jawaban</option><option value="Hadir">Hadir</option><option value="Tidak hadir">Belum dapat hadir</option></select></label><label>Ucapan<textarea name="message" required rows="4" placeholder="Tuliskan doa dan ucapan..."></textarea></label><button class="primary-button" type="submit">Kirim Konfirmasi <span>↗</span></button><p id="form-status" role="status"></p></form>
+    </section>
+
+    <section class="gift section">
+      <div class="gift-copy reveal"><p class="eyebrow">Tanda Kasih</p><h2>Wedding Gift</h2><p>Doa restu Anda adalah hadiah paling berharga. Tanda kasih dapat disampaikan melalui rekening berikut.</p></div>
+      <div class="bank-card reveal"><small>BANK CENTRAL ASIA</small><strong>1234 5678 901</strong><span>Raka Aditya Pranawa</span><button id="copy-account" type="button">Salin Nomor</button></div>
+    </section>
+
+    <footer><div class="gunungan small" aria-hidden="true"><span>ꦫ</span></div><p class="eyebrow">Matur Nuwun</p><h2>Raka <i>&</i> Sekar</h2><p>Atas kehadiran dan doa restu Anda.</p><a href="index.html">← Kembali ke DAPRITA</a></footer>
+  </main>
+
+  <dialog id="lightbox"><button type="button" aria-label="Tutup">×</button><img src="" alt="" /></dialog>
+  <audio id="background-music" loop preload="metadata"><source src="assets/audio/wedding-piano.ogg" type="audio/ogg" /></audio>
+  <button class="music-button" id="music-button" type="button" aria-label="Putar musik" title="Putar musik">♪</button>
+  <script src="undangan-jawa.js"></script>
+</body>
+</html>
