@@ -497,6 +497,10 @@ button {
   background: linear-gradient(145deg, #e4d5bf, #8f684b);
 }
 
+.card-five {
+  background: linear-gradient(145deg, #d9dfd4, #5e7163);
+}
+
 .phone-mockup {
   position: relative;
   width: min(230px, 78%);
@@ -624,6 +628,26 @@ button {
     linear-gradient(145deg, #38281e, #704c36);
 }
 
+.screen-slide {
+  color: #f8f4ea;
+  background:
+    linear-gradient(rgba(20,34,27,.5), rgba(20,34,27,.86)),
+    url("https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=500&q=78") center/cover;
+}
+
+.screen-slide-mark {
+  display: grid;
+  place-items: center;
+  width: 110px;
+  height: 110px;
+  margin: 28px 0 10px;
+  border: 1px solid rgba(220, 193, 137, .8);
+  border-radius: 50%;
+  color: #dfc28d;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2rem;
+}
+
 .screen-gunungan {
   display: grid;
   place-items: center;
@@ -657,7 +681,8 @@ button {
 
 .card-two .portfolio-demo,
 .card-three .portfolio-demo,
-.card-four .portfolio-demo {
+.card-four .portfolio-demo,
+.card-five .portfolio-demo {
   border: 1px solid rgba(255,255,255,.2);
   background: rgba(10, 12, 10, 0.72);
 }
