@@ -501,6 +501,30 @@ button {
   background: linear-gradient(145deg, #d9dfd4, #5e7163);
 }
 
+.card-six {
+  background: linear-gradient(145deg, #17090b, #6e1520);
+}
+
+.card-seven {
+  background: linear-gradient(145deg, #081b16, #376b58);
+}
+
+.card-eight {
+  background: linear-gradient(145deg, #070606, #5c121a);
+}
+
+.card-nine {
+  background: linear-gradient(145deg, #0c352f, #bd684c);
+}
+
+.card-ten {
+  background: linear-gradient(145deg, #f1e8d7, #78866b);
+}
+
+.card-eleven {
+  background: linear-gradient(145deg, #edcd61, #173e32);
+}
+
 .phone-mockup {
   position: relative;
   width: min(230px, 78%);
@@ -648,6 +672,132 @@ button {
   font-size: 2rem;
 }
 
+.screen-minang {
+  color: #f8eddb;
+  background:
+    linear-gradient(rgba(20,7,9,.38), rgba(20,7,9,.86)),
+    url("assets/minang-premium/rumah-gadang-hero.png") center/cover;
+}
+
+.screen-gonjong {
+  display: grid;
+  place-items: center;
+  width: 150px;
+  height: 110px;
+  margin: 26px 0 8px;
+  color: #efd18a;
+  background: rgba(100, 15, 26, .86);
+  clip-path: polygon(0 38%, 25% 0, 50% 30%, 75% 0, 100% 38%, 84% 100%, 16% 100%);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.8rem;
+}
+
+.screen-gonjong i { color: #c79a42; }
+
+.screen-islamic {
+  color: #f8f1df;
+  background:
+    linear-gradient(rgba(7,27,22,.42), rgba(7,27,22,.88)),
+    url("assets/islamic-elegant/islamic-venue.png") center/cover;
+}
+
+.screen-islamic-mark {
+  display: grid;
+  place-items: center;
+  width: 112px;
+  height: 135px;
+  margin: 24px 0 8px;
+  color: #efd99f;
+  border: 1px solid #c6a15b;
+  border-radius: 58px 58px 3px 3px;
+  background: rgba(13,47,39,.72);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.7rem;
+}
+
+.screen-islamic-mark i { color: #c6a15b; }
+
+.screen-cinematic {
+  color: #f1e9db;
+  background:
+    linear-gradient(rgba(8,7,7,.28), rgba(8,7,7,.88)),
+    url("assets/cinematic-dark-luxury/couple-hero.png") center/cover;
+}
+
+.screen-cinematic-mark {
+  display: grid;
+  place-items: center;
+  width: 104px;
+  height: 104px;
+  margin: 30px 0 10px;
+  color: #ead7ad;
+  border: 1px solid #c79a4b;
+  border-radius: 50%;
+  background: rgba(8,7,7,.62);
+  font-size: 1.4rem;
+}
+
+.screen-passport {
+  color: #fff7e8;
+  background:
+    linear-gradient(rgba(7, 44, 39, .38), rgba(7, 44, 39, .9)),
+    url("assets/nusantara-passport/passport-flatlay.png") center/cover;
+}
+
+.screen-passport-mark {
+  display: grid;
+  place-items: center;
+  width: 116px;
+  height: 150px;
+  margin: 24px 0 8px;
+  color: #efd18a;
+  border: 1px solid #d7b96e;
+  border-radius: 5px 12px 12px 5px;
+  background: rgba(10, 55, 48, .88);
+  box-shadow: inset 0 0 0 5px rgba(215, 185, 110, .16);
+  font-size: 1.8rem;
+}
+
+.screen-watercolor-jawa {
+  color: #4c453b;
+  background:
+    linear-gradient(rgba(255, 250, 240, .28), rgba(255, 250, 240, .76)),
+    url("assets/watercolor-jawa/gunungan-floral.png") center/cover;
+}
+
+.screen-watercolor-mark {
+  display: grid;
+  place-items: center;
+  width: 112px;
+  height: 142px;
+  margin: 25px 0 8px;
+  color: #fffaf0;
+  border: 1px solid #b79862;
+  background: linear-gradient(145deg, #ad6851, #78866b);
+  clip-path: polygon(50% 0, 92% 72%, 76% 100%, 24% 100%, 8% 72%);
+  font-family: serif;
+  font-size: 2rem;
+}
+
+.screen-newspaper {
+  color: #1d211d;
+  background:
+    linear-gradient(rgba(255, 250, 240, .4), rgba(255, 250, 240, .88)),
+    url("assets/garden-newspaper/newspaper-flatlay.png") center/cover;
+}
+
+.screen-news-mark {
+  margin: 32px 0 12px;
+  padding: 8px 13px;
+  color: #fff;
+  background: #b9684e;
+  border: 3px double #fff;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .15em;
+  transform: rotate(-5deg);
+}
+
 .screen-gunungan {
   display: grid;
   place-items: center;
@@ -682,7 +832,13 @@ button {
 .card-two .portfolio-demo,
 .card-three .portfolio-demo,
 .card-four .portfolio-demo,
-.card-five .portfolio-demo {
+.card-five .portfolio-demo,
+.card-six .portfolio-demo,
+.card-seven .portfolio-demo,
+.card-eight .portfolio-demo,
+.card-nine .portfolio-demo,
+.card-ten .portfolio-demo,
+.card-eleven .portfolio-demo {
   border: 1px solid rgba(255,255,255,.2);
   background: rgba(10, 12, 10, 0.72);
 }
