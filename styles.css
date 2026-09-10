@@ -29,6 +29,25 @@ body {
   line-height: 1.6;
 }
 
+/* Urutan halaman dibuat singkat menuju demo dan keputusan pembelian. */
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+main > * { order: 10; }
+main > .hero { order: 1; }
+main > #portfolio { order: 2; }
+main > #harga { order: 3; }
+main > #fitur { order: 4; }
+main > #cara-pesan { order: 5; }
+main > #layanan { order: 6; }
+main > #bundling { order: 7; }
+main > .cta-banner { order: 8; }
+main > #konsultasi { order: 9; }
+main > #testimoni { order: 10; }
+main > .faq { order: 11; }
+
 a {
   color: inherit;
   text-decoration: none;
