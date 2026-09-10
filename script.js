@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
       `Nama: ${data.get('name')}`,
       `Tanggal acara: ${data.get('date')}`,
       `Lokasi: ${data.get('location')}`,
-      `Anggaran: ${data.get('budget')}`,
+      `Paket yang diminati: ${data.get('budget')}`,
       `Layanan: ${services.join(', ')}`,
       `Catatan: ${data.get('notes') || '-'}`
     ].join('\n');
