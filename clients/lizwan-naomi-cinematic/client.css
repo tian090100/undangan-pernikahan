@@ -4,3 +4,4 @@
 a[x-apple-data-detectors],a[x-apple-data-detectors]:link,a[x-apple-data-detectors]:visited{color:inherit!important;font:inherit!important;letter-spacing:inherit!important;text-decoration:none!important}
 .couple-lockup{display:grid;justify-items:center;line-height:.88}.couple-lockup i{display:block;margin:.08em 0;font-size:.45em;line-height:1}.hero-copy .couple-lockup{justify-items:start}footer .couple-lockup{justify-content:center}
 @media(max-width:900px){.hero-copy .couple-lockup{justify-items:center;text-align:center}}
+@media(max-width:560px){.hashtag-scene h2{font-size:clamp(1.15rem,6.25vw,1.55rem);line-height:1.15;letter-spacing:0;white-space:nowrap;overflow-wrap:normal;word-break:normal}}
