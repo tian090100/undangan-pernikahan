@@ -41,3 +41,4 @@
 .gallery::after{bottom:-20px;height:42px}
 .cover-copy #open-invitation{display:inline-flex;align-items:center;justify-content:center;gap:10px}
 .cover-copy #open-invitation svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.footer-copy small a{color:inherit;text-decoration:underline;text-underline-offset:3px}

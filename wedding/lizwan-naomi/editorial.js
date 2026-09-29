@@ -9,4 +9,10 @@ document.addEventListener('DOMContentLoaded',()=>{
   $('#rsvp-form').onsubmit=e=>{e.preventDefault();const d=new FormData(e.currentTarget),name=String(d.get('name')).trim(),text=`RSVP Pernikahan Lizwan & Naomi\n\nNama: ${name}\nKehadiran: ${d.get('attendance')}\nJumlah tamu: ${d.get('guests')}\nUcapan: ${String(d.get('message')).trim()}`;$('#status').textContent=`Mauliate, ${name}. WhatsApp akan dibuka.`;window.open(`https://wa.me/6282260327488?text=${encodeURIComponent(text)}`,'_blank','noopener')};
   const dlg=$('#lightbox'),dlgImg=dlg.querySelector('img');document.querySelectorAll('.photo').forEach(btn=>btn.onclick=()=>{const img=btn.querySelector('img');dlgImg.src=img.src;dlgImg.alt=img.alt;dlg.showModal()});dlg.querySelector('button').onclick=()=>dlg.close();dlg.onclick=e=>e.target===dlg&&dlg.close();
 });
-let youtubePlayer;function onYouTubeIframeAPIReady(){youtubePlayer=new YT.Player('youtube-player',{height:'1',width:'1',videoId:'3fFpkaOjxW8',playerVars:{playsinline:1,controls:0,loop:1,playlist:'3fFpkaOjxW8'},events:{onStateChange:e=>musicState(e.data===YT.PlayerState.PLAYING)}})}function musicState(on){const b=document.getElementById('music');b.classList.toggle('active',on);b.textContent=on?'♫':'♪';b.setAttribute('aria-label',on?'Jeda musik':'Putar musik')}function playMusic(){if(youtubePlayer?.playVideo)youtubePlayer.playVideo()}document.getElementById('music').onclick=()=>{if(!youtubePlayer)return;youtubePlayer.getPlayerState()===YT.PlayerState.PLAYING?youtubePlayer.pauseVideo():youtubePlayer.playVideo()};
+const weddingMusic=document.getElementById('wedding-music');
+const musicButton=document.getElementById('music');
+function musicState(on){musicButton.classList.toggle('active',on);musicButton.textContent=on?'♫':'♪';musicButton.setAttribute('aria-label',on?'Jeda musik':'Putar musik')}
+function playMusic(){weddingMusic.play().catch(()=>musicState(false))}
+weddingMusic.addEventListener('play',()=>musicState(true));
+weddingMusic.addEventListener('pause',()=>musicState(false));
+musicButton.onclick=()=>weddingMusic.paused?playMusic():weddingMusic.pause();
