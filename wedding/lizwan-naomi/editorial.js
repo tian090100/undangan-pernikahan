@@ -9,10 +9,14 @@ document.addEventListener('DOMContentLoaded',()=>{
   $('#rsvp-form').onsubmit=e=>{e.preventDefault();const d=new FormData(e.currentTarget),name=String(d.get('name')).trim(),text=`RSVP Pernikahan Lizwan & Naomi\n\nNama: ${name}\nKehadiran: ${d.get('attendance')}\nJumlah tamu: ${d.get('guests')}\nUcapan: ${String(d.get('message')).trim()}`;$('#status').textContent=`Mauliate, ${name}. WhatsApp akan dibuka.`;window.open(`https://wa.me/6282260327488?text=${encodeURIComponent(text)}`,'_blank','noopener')};
   const dlg=$('#lightbox'),dlgImg=dlg.querySelector('img');document.querySelectorAll('.photo').forEach(btn=>btn.onclick=()=>{const img=btn.querySelector('img');dlgImg.src=img.src;dlgImg.alt=img.alt;dlg.showModal()});dlg.querySelector('button').onclick=()=>dlg.close();dlg.onclick=e=>e.target===dlg&&dlg.close();
 });
-const weddingMusic=document.getElementById('wedding-music');
+const chosenSongId='3fFpkaOjxW8';
+const chosenSongUrl=`https://www.youtube.com/watch?v=${chosenSongId}`;
 const musicButton=document.getElementById('music');
-function musicState(on){musicButton.classList.toggle('active',on);musicButton.textContent=on?'♫':'♪';musicButton.setAttribute('aria-label',on?'Jeda musik':'Putar musik')}
-function playMusic(){weddingMusic.play().catch(()=>musicState(false))}
-weddingMusic.addEventListener('play',()=>musicState(true));
-weddingMusic.addEventListener('pause',()=>musicState(false));
-musicButton.onclick=()=>weddingMusic.paused?playMusic():weddingMusic.pause();
+let youtubePlayer,playerReady=false,pendingMusic=false;
+function musicState(on){musicButton.classList.toggle('active',on);musicButton.textContent=on?'♫':'♪';musicButton.setAttribute('aria-label',on?'Jeda Kau Yang Kusayang':'Putar Kau Yang Kusayang')}
+function onYouTubeIframeAPIReady(){
+  if(youtubePlayer||!window.YT?.Player)return;
+  youtubePlayer=new YT.Player('youtube-player',{height:'200',width:'200',videoId:chosenSongId,playerVars:{playsinline:1,controls:0,loop:1,playlist:chosenSongId,origin:location.origin},events:{onReady:()=>{playerReady=true;if(pendingMusic)youtubePlayer.playVideo()},onStateChange:event=>musicState(event.data===YT.PlayerState.PLAYING),onError:()=>{playerReady=false;musicButton.title='Buka Kau Yang Kusayang di YouTube'}}});
+}
+function playMusic(){pendingMusic=true;if(playerReady)youtubePlayer.playVideo();else onYouTubeIframeAPIReady()}
+musicButton.onclick=()=>{if(!playerReady){window.open(chosenSongUrl,'_blank','noopener');return}if(youtubePlayer.getPlayerState()===YT.PlayerState.PLAYING){pendingMusic=false;youtubePlayer.pauseVideo()}else playMusic()};
