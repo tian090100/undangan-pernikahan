@@ -2,7 +2,6 @@
 .gallery .photo-slot button img{transition:transform .45s ease}
 .gallery .photo-slot button:hover img{transform:scale(1.04)}
 .gallery .photo-slot button:focus-visible{outline:3px solid var(--gold);outline-offset:-3px}
-.gallery .photo-slot button span{position:absolute;right:10px;bottom:10px;z-index:1;padding:7px 9px;border:1px solid rgba(255,255,255,.65);background:rgba(26,13,14,.72);font-size:9px;letter-spacing:.12em;text-transform:uppercase}
 .gallery-lightbox{position:fixed;inset:0;width:100%;max-width:none;height:100%;max-height:none;margin:0;padding:clamp(18px,4vw,42px);border:0;background:rgba(13,8,9,.96);color:#f7efe5;z-index:100}
 .gallery-lightbox::backdrop{background:rgba(13,8,9,.94)}
 .gallery-lightbox[open]{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}

@@ -35,10 +35,6 @@ if (galleryImages.length) {
     button.setAttribute('aria-label', `Perbesar foto ${index + 1}: ${image.alt}`);
     image.parentNode.insertBefore(button, image);
     button.append(image);
-    const hint = document.createElement('span');
-    hint.setAttribute('aria-hidden', 'true');
-    hint.textContent = 'Lihat foto ↗';
-    button.append(hint);
     button.addEventListener('click', () => {
       lastTrigger = button;
       showImage(index);
