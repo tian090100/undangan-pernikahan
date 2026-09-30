@@ -59,9 +59,10 @@ document.querySelectorAll('[data-copy]').forEach(button => {
   });
 });
 
-// Isi dengan endpoint penyimpanan sebelum undangan dibagikan kepada tamu.
-const rsvpEndpoint = '';
-const rsvpStorageKey = 'daprita-tanjung-yuli-rsvp';
+const rsvpEndpoint = 'https://ejdgpkgozhkteuofmwle.supabase.co/rest/v1/tanjung_yuli_rsvp';
+// Publishable key is safe for browser use; database grants and RLS restrict access.
+const rsvpApiKey = 'sb_publishable_rw8BP21SoBjbWevbz6Be6Q_eFDGp2QL';
+const rsvpHeaders = { apikey: rsvpApiKey };
 const rsvpForm = document.getElementById('rsvp-form');
 const rsvpSlides = document.getElementById('rsvp-slides');
 const rsvpControls = document.getElementById('rsvp-controls');
@@ -134,24 +135,26 @@ function renderRsvp() {
   startRsvpRotation();
 }
 
-function loadLocalRsvp() {
-  try {
-    const saved = JSON.parse(localStorage.getItem(rsvpStorageKey) || '[]');
-    if (Array.isArray(saved)) rsvpEntries = saved.filter(isValidRsvp).slice(0, 50);
-  } catch { rsvpEntries = []; }
-  renderRsvp();
-}
-
 async function loadRemoteRsvp() {
   try {
-    const response = await fetch(rsvpEndpoint, { cache: 'no-store' });
+    const query = '?select=name,attendance,guests,message,created_at&order=created_at.desc&limit=50';
+    const response = await fetch(rsvpEndpoint + query, {
+      headers: rsvpHeaders, cache: 'no-store'
+    });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const data = await response.json();
-    if (!Array.isArray(data.entries)) throw new Error('Invalid RSVP response');
-    rsvpEntries = data.entries.filter(isValidRsvp).slice(0, 50);
+    if (!Array.isArray(data)) throw new Error('Invalid RSVP response');
+    rsvpEntries = data.filter(isValidRsvp).map(entry => ({
+      ...entry,
+      date: new Intl.DateTimeFormat('id-ID', {
+        day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Asia/Jakarta'
+      }).format(new Date(entry.created_at))
+    }));
+    currentRsvp = 0;
     document.getElementById('rsvp-storage-note').hidden = true;
     renderRsvp();
   } catch {
+    if (rsvpEntries.length) return;
     rsvpSlides.replaceChildren();
     const error = document.createElement('p');
     error.className = 'rsvp-empty';
@@ -186,22 +189,19 @@ rsvpForm.addEventListener('submit', async event => {
   const button = rsvpForm.querySelector('button[type="submit"]');
   button.disabled = true;
   try {
-    if (rsvpEndpoint) {
-      rsvpStatus.textContent = 'Mengirim konfirmasi...';
-      const response = await fetch(rsvpEndpoint, {
-        method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(entry)
-      });
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      await loadRemoteRsvp();
-      rsvpStatus.textContent = `Terima kasih, ${name}. RSVP dan ucapan Anda sudah terkirim.`;
-    } else {
-      rsvpEntries.unshift(entry);
-      rsvpEntries = rsvpEntries.slice(0, 50);
-      currentRsvp = 0;
-      localStorage.setItem(rsvpStorageKey, JSON.stringify(rsvpEntries));
-      renderRsvp();
-      rsvpStatus.textContent = `Terima kasih, ${name}. Respons baru tersimpan di perangkat ini dan belum terkirim secara online.`;
-    }
+    rsvpStatus.textContent = 'Mengirim konfirmasi...';
+    const response = await fetch(rsvpEndpoint, {
+      method: 'POST',
+      headers: { ...rsvpHeaders, 'Content-Type': 'application/json', Prefer: 'return=minimal' },
+      body: JSON.stringify({ name, attendance, guests, message })
+    });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    rsvpEntries.unshift(entry);
+    rsvpEntries = rsvpEntries.slice(0, 50);
+    currentRsvp = 0;
+    renderRsvp();
+    rsvpStatus.textContent = `Terima kasih, ${name}. RSVP dan ucapan Anda sudah terkirim.`;
+    loadRemoteRsvp();
     rsvpForm.reset();
   } catch {
     rsvpStatus.textContent = 'Konfirmasi belum tersimpan. Silakan coba lagi beberapa saat lagi.';
@@ -210,5 +210,4 @@ rsvpForm.addEventListener('submit', async event => {
   }
 });
 
-if (rsvpEndpoint) loadRemoteRsvp();
-else loadLocalRsvp();
+loadRemoteRsvp();
