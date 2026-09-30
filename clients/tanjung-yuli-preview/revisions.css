@@ -1,0 +1,57 @@
+/* Revisi tata letak dan carousel premium Tanjung & Yuli */
+.photo-reel{overflow:hidden;touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none}
+.photo-reel.is-dragging{cursor:grabbing}
+.photo-reel-track{display:flex;width:max-content;height:100%;gap:var(--reel-gap,0px);animation:photoReel var(--reel-duration,26s) linear infinite;will-change:transform}
+.photo-reel-track>img{display:block;flex:0 0 var(--reel-item-width,100%);width:var(--reel-item-width,100%);height:100%;max-height:none;object-fit:cover;-webkit-user-drag:none}
+@keyframes photoReel{to{transform:translate3d(calc(-1 * var(--reel-distance,0px)),0,0)}}
+.hero{min-height:680px}
+.hero-media{height:600px}
+.main-photo{inset:0 25% 0 0}
+.main-photo .photo-reel-track>img{object-position:center 35%}
+.accent-photo{top:12%;right:2%;width:38%;height:43%;background:#321b1d;box-shadow:-10px 12px 0 var(--gold)}
+.accent-photo .photo-reel-track>img{object-fit:contain;object-position:center;background:#321b1d}
+.hero-media:after{background:linear-gradient(180deg,rgba(23,12,13,.08),transparent 36%,rgba(23,12,13,.12) 62%,rgba(23,12,13,.83) 100%)}
+.hero-copy{top:auto;bottom:52px;left:6%;right:6%;z-index:4;text-shadow:0 2px 12px #160c0e}
+.hero-copy h2{font-size:clamp(58px,13vw,75px);line-height:.78;margin:10px 0 17px}
+.hero-copy p,.hero-copy span{font-size:9px}
+.vertical{bottom:18px;right:3%;z-index:4}
+.story-art{margin:0;overflow:hidden;display:block}
+.story-art img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+.timeline article:nth-child(2) .story-art img{object-position:60% center}
+.event-grid .maps-link{display:inline-flex;align-items:center;margin-top:12px;padding:10px 14px;border:1px solid var(--gold);border-radius:24px;color:var(--paper);font-size:10px;font-weight:600;letter-spacing:.07em;text-decoration:none;transition:background .2s,color .2s}
+.event-grid .maps-link:hover,.event-grid .maps-link:focus-visible{background:var(--gold);color:var(--ink)}
+.gallery-grid .photo-slot{margin:0;border:0;display:block}
+.gallery-grid .photo-slot img{width:100%;height:100%;object-fit:cover}
+.gift-card{padding:32px 24px 75px}
+.bank-entry{padding:23px 0;border-top:1px solid #ae8570}
+.bank-entry:first-of-type{margin-top:24px}
+.bank-entry strong{display:block;font:500 27px/1 var(--serif)}
+.bank-entry p{font:500 22px var(--sans);letter-spacing:.06em;margin:12px 0}
+.bank-entry .bank-number{display:flex;align-items:center;gap:11px;flex-wrap:wrap}
+.bank-number span{font:600 11px var(--sans);letter-spacing:.1em;color:var(--ink);background:var(--gold);padding:6px 8px;border-radius:3px}
+.bank-entry button{border:1px solid var(--gold);background:none;color:var(--paper);border-radius:20px;padding:8px 13px;font-size:10px;text-transform:uppercase;letter-spacing:.12em}
+.bank-entry button:hover{background:var(--gold);color:var(--ink)}
+.rsvp form{margin:28px auto 0;padding:23px;background:var(--paper);color:var(--ink);text-align:left}
+.rsvp label{display:block;margin:0 0 19px;font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.14em}
+.rsvp input,.rsvp select,.rsvp textarea{display:block;width:100%;font:13px var(--sans);color:var(--ink);background:transparent;border:0;border-bottom:1px solid #cbb8a5;border-radius:0;padding:11px 0;outline-color:var(--maroon);margin-top:5px}
+.rsvp textarea{resize:vertical}
+.rsvp form>button{border:0;background:var(--maroon);color:#fff;padding:13px 18px;border-radius:25px;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.11em}
+#rsvp-status{font-size:11px;line-height:1.5}
+.rsvp-wall{position:relative;max-width:420px;margin:58px auto 0;padding:43px 20px 25px;background:radial-gradient(circle at 50% 0,rgba(196,141,91,.18),transparent 56%),#eaddc9;color:#3e2422;border:1px solid #c69b69;box-shadow:10px 10px 0 rgba(4,2,2,.35),inset 0 0 0 7px #eaddc9,inset 0 0 0 8px rgba(124,67,47,.3)}
+.rsvp-wall::before{content:"";position:absolute;top:0;left:0;right:0;height:28px;background:#1a1111 url('../../assets/batak/gorga-border.png') center/auto 100% repeat-x}
+.rsvp-wall-heading>span{display:block;color:#9f6545;font-size:17px;margin:4px 0 9px}.rsvp-wall-heading>p{color:#8a4a3b;font-size:8px;font-weight:600;letter-spacing:.2em}.rsvp-wall-heading h3{font:500 42px/.95 var(--serif);margin:12px 0 26px;color:#5b2726}
+.rsvp-slides{min-height:215px;text-align:left}
+.rsvp-card{position:relative;min-height:215px;padding:24px 22px 20px;background:#faf3e8;border:1px solid #d3b591;box-shadow:0 6px 19px rgba(68,34,26,.12);animation:rsvp-card-enter .55s ease both}
+.rsvp-card::after{content:"✦";position:absolute;right:18px;top:15px;color:#c39e6c;font-size:12px}.rsvp-card[hidden]{display:none}
+.rsvp-badge{display:inline-block;padding:6px 10px;border:1px solid #b17b66;color:#7e463e;font-size:8px;font-weight:600;letter-spacing:.13em;text-transform:uppercase}.rsvp-badge.is-attending{border-color:#9a8b5d;color:#68633c}
+.rsvp-quote{max-height:105px;overflow-y:auto;margin:20px 0 23px;color:#4a2a27;font:italic 23px/1.22 var(--serif);white-space:pre-wrap;overflow-wrap:anywhere}
+.rsvp-byline{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding-top:11px;border-top:1px solid #ddc8ae}.rsvp-byline strong{font-size:10px;color:#6b3631;overflow-wrap:anywhere}.rsvp-byline time{font-size:8px;color:#987b68;white-space:nowrap}
+.rsvp-empty{display:grid;place-items:center;min-height:215px;padding:25px;border:1px solid #caa679;color:#725850;font:19px/1.35 var(--serif);text-align:center}
+.rsvp-controls{display:flex;justify-content:center;align-items:center;gap:17px;margin:19px auto 0;font-size:10px;letter-spacing:.12em;color:#76504b}.rsvp-controls[hidden]{display:none}.rsvp-controls button{width:37px;height:37px;border:1px solid #a36c56;border-radius:50%;background:#f8efe3;color:#6a302d;font-size:18px;cursor:pointer}.rsvp-controls button:hover{background:#6a302d;color:#f8efe3}.rsvp-controls button:focus-visible{outline:2px solid #6a302d;outline-offset:3px}
+.rsvp-storage-note{margin:16px 0 0;color:#876d61;font-size:9px;line-height:1.55}
+@keyframes rsvp-card-enter{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.whatsapp-contact{display:inline-block;margin:0 0 26px;padding:12px 17px;border:1px solid var(--gold);border-radius:999px;color:var(--paper);text-decoration:none;font-size:11px;line-height:1.5;letter-spacing:.03em}
+.whatsapp-contact:hover,.whatsapp-contact:focus-visible{background:var(--gold);color:var(--ink)}
+footer small{display:block}
+@media(max-width:380px){.hero-copy h2{font-size:58px}.accent-photo{width:39%;right:1%}}
+@media(prefers-reduced-motion:reduce){.photo-reel-track,.rsvp-card{animation:none!important}.reveal{opacity:1;transform:none}}

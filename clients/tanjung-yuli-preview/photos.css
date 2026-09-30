@@ -1,0 +1,24 @@
+/* Foto asli klien; framing mengikuti rasio tiap area tanpa mengubah berkas sumber. */
+.cover{background:#1b1112}
+.cover-art{inset:0;opacity:1;display:block}
+.cover-art img{width:100%;height:100%;max-height:none;object-fit:cover;object-position:center 40%;filter:brightness(.58)}
+.cover-inner{background:linear-gradient(180deg,rgba(16,8,9,.55),rgba(16,8,9,.06) 35%,rgba(16,8,9,.18) 58%,rgba(16,8,9,.85))}
+.desktop-stage{background:#241515}
+.desktop-stage img{width:100%;height:100%;top:0;left:0;object-fit:cover;object-position:center 35%;opacity:1}
+.desktop-stage:after{background:linear-gradient(0deg,rgba(20,9,10,.88),rgba(20,9,10,.1) 70%)}
+.hero-media .photo-slot img,.person-photo img,.gallery .photo-slot img{display:block;width:100%;height:100%;object-fit:cover}
+.hero-media .photo-slot:before,.person-photo:before,.gallery .photo-slot:before{display:none}
+.main-photo img{padding:0;opacity:1;object-position:center 42%}
+.accent-photo img{object-position:center 43%}
+.hero-media:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(23,12,13,.5),transparent 50%)}
+.hero-copy{z-index:3}
+.person-photo img{object-position:center 30%}
+.person.bride .person-photo img{object-position:center 36%}
+.gallery .photo-slot{margin:0;border:0;display:block}
+.gallery .photo-slot img{object-position:center}
+.gallery .photo-slot:nth-child(1) img{object-position:center 35%}
+@media(max-width:480px){
+  .cover-art img{object-position:center 35%}
+  .main-photo img{object-position:center 40%}
+  .accent-photo img{object-position:center 37%}
+}
