@@ -1,5 +1,6 @@
 .gallery .photo-slot button{display:block;width:100%;height:100%;padding:0;border:0;background:none;color:#fff;position:relative;overflow:hidden;cursor:zoom-in}
 .gallery .photo-slot.landscape{aspect-ratio:3/2}
+.gallery .gallery-feature{grid-column:1/-1;width:min(74%,330px);justify-self:center;margin-top:8px}
 .gallery .photo-slot button img{transition:transform .45s ease}
 .gallery .photo-slot button:hover img{transform:scale(1.04)}
 .gallery .photo-slot button:focus-visible{outline:3px solid var(--gold);outline-offset:-3px}
