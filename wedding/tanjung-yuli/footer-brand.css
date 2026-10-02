@@ -1,3 +1,7 @@
+footer {
+  padding-bottom: 96px;
+}
+
 footer .footer-copyright {
   display: grid;
   justify-items: center;
