@@ -1,0 +1,42 @@
+.footer-copy > small {
+  margin-top: 32px;
+}
+
+.footer-copy .footer-copyright {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  width: min(420px, 88%);
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, .5);
+}
+
+.footer-copy .footer-copyright small {
+  margin-top: 0;
+  font-size: 9px;
+  letter-spacing: .12em;
+  line-height: 1.6;
+  text-transform: none;
+}
+
+.footer-copy .footer-copyright nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 18px;
+}
+
+.footer-copy .footer-copyright a {
+  color: #fff;
+  font-size: 10px;
+  line-height: 1.6;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, .65);
+}
+
+.footer-copy .footer-copyright a:hover,
+.footer-copy .footer-copyright a:focus-visible {
+  color: #f2d4a6;
+  border-color: currentColor;
+}
