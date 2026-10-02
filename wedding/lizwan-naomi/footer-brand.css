@@ -1,3 +1,7 @@
+.footer-copy {
+  transform: translateY(55px);
+}
+
 .footer-copy > small {
   margin-top: 32px;
 }
