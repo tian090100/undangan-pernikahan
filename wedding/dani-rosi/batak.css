@@ -1,0 +1,139 @@
+:root{--forest:#35171a;--forest-light:#5d2629;--ivory:#f6efe3;--cream:#e7d9c2;--gold:#c6a56a;--ink:#391b1d;--muted:#7d655d}
+body{background:#d7cec1}
+.site-shell{box-shadow:0 0 52px rgba(54,19,21,.22)}
+.cover{background:radial-gradient(circle at 50% 42%,#633035 0%,#35171a 55%,#230e12 100%);padding:19px}
+.cover::before,.cover::after{content:"";position:absolute;left:19px;right:19px;height:30px;background:url('../../assets/batak/gorga-border.png') center/auto 100% repeat-x;z-index:1;pointer-events:none}
+.cover::before{top:20px}.cover::after{bottom:20px;transform:rotate(180deg)}
+.cover-frame{border:1px solid rgba(226,194,141,.68);padding-top:66px;padding-bottom:71px}
+.cover-frame{transition:transform .75s ease,filter .75s ease}
+.cover.opened .cover-frame{transform:scale(1.035);filter:blur(2px)}
+.cover-frame::before,.cover-frame::after{width:42px;height:42px;border-color:var(--gold)}
+.cover-top{color:#f1d9a9;position:relative;z-index:2}
+.cover-center{padding-top:0}
+.cover-emblem{width:165px;height:145px;margin:0 auto 7px;display:block;filter:drop-shadow(0 9px 12px rgba(11,3,5,.45));animation:ornament-breathe 5s ease-in-out infinite}
+.cover-emblem img{display:block;width:100%;height:100%;object-fit:contain}
+.horas{position:relative;z-index:2;font:400 23px var(--serif);letter-spacing:.22em;color:#dbbc82;margin:9px 0 11px}
+.cover h1{font-size:clamp(59px,15vw,84px)}
+.cover-date{color:#f8ede2}
+.cover-bottom button{background:#c6a56a;border-color:#c6a56a;color:#341619}
+.cover-bottom button:hover{background:#e2c794}
+.opening{min-height:760px;padding:60px 32px 80px;color:#f5e9d7;background:radial-gradient(ellipse at 50% 38%,rgba(133,67,59,.55),transparent 68%),repeating-linear-gradient(45deg,transparent 0 31px,rgba(226,184,121,.035) 31px 32px),repeating-linear-gradient(-45deg,transparent 0 31px,rgba(226,184,121,.035) 31px 32px),linear-gradient(160deg,#32151a,#4c2225 52%,#2d1217)}
+.opening::before,.opening::after{width:270px;height:270px;border:1px solid rgba(209,164,104,.15);border-radius:0;transform:rotate(45deg)}
+.opening::before{top:-190px;right:-170px}.opening::after{bottom:-195px;left:-170px}
+.opening-line{inset:24px;border-color:rgba(217,172,112,.55)}
+.opening-line::before,.opening-line::after{content:"";position:absolute;left:0;right:0;height:29px;background:url('../../assets/batak/gorga-border.png') center/auto 100% repeat-x}
+.opening-line::before{top:-19px}.opening-line::after{bottom:-19px;transform:rotate(180deg)}
+.opening-line::after{display:none}
+.opening .eyebrow,.opening-date{color:#e6c184}
+.opening-prelude{color:#eee0cf}
+.opening-logo{width:170px;height:170px;margin:18px auto 14px;filter:drop-shadow(0 11px 19px rgba(21,5,8,.42))}
+.opening-logo img{display:block;width:100%;height:100%;object-fit:contain}
+.opening .full-names{font-family:'Cormorant Garamond',Georgia,serif;font-size:53px;font-weight:400;line-height:.98;letter-spacing:-.035em;margin:18px auto 0;max-width:380px}
+.full-names span{display:block}
+.full-names em{font-family:var(--serif);font-size:38px;line-height:.8;margin:8px 0 11px;letter-spacing:0}
+.full-names .bride-name{font-size:40px;line-height:1.02}
+.full-names i{font-size:.8em;font-weight:400}
+.opening h2,.footer h2{color:#fff2df}
+.tiny-flourish,.ornament,.footer-flourish{color:#d2a56f}
+.tiny-flourish{margin:15px 0}
+.scroll-cue{bottom:25px;color:#e8ceb0}
+.scripture{position:relative;padding:56px 29px;background:radial-gradient(circle at 50% 50%,#71353a,#3d1a1e 78%);text-align:center}
+.scripture::before,.scripture::after{content:"";position:absolute;left:0;right:0;height:30px;background:url('../../assets/batak/gorga-border.png') center/auto 100% repeat-x}
+.scripture::before{top:0}.scripture::after{bottom:0;transform:rotate(180deg)}
+.scripture-frame{position:relative;border:1px solid rgba(220,176,112,.65);padding:42px 27px 40px;max-width:430px;margin:auto;box-shadow:inset 0 0 0 9px rgba(229,177,112,.05)}
+.scripture-frame::before,.scripture-frame::after{content:"";position:absolute;width:20px;height:20px;border:1px solid #d7aa72;transform:rotate(45deg);background:#59272b}
+.scripture-frame::before{top:-11px;left:calc(50% - 11px)}.scripture-frame::after{bottom:-11px;left:calc(50% - 11px)}
+.scripture-mark{font-size:15px;color:#d9b47d}.scripture-kicker{font-size:9px;letter-spacing:.27em;color:#e1bd87;margin:23px 0 14px}
+.scripture h2{font:400 48px/1.06 var(--serif);margin:0 0 28px;color:#fff1dc}
+.scripture blockquote{font:400 22px/1.55 var(--serif);color:#f7e9d8;margin:0 auto;max-width:340px}
+.scripture-reference{font-size:10px;font-weight:700;letter-spacing:.19em;color:#e4bc80;margin:27px 0 23px}
+.scripture small{font-size:9px;line-height:1.6;color:#e2cdb6}
+.events{position:relative;background:radial-gradient(circle at 50% 15%,rgba(144,68,56,.42),transparent 68%),repeating-linear-gradient(45deg,transparent 0 39px,rgba(230,192,145,.04) 39px 40px),repeating-linear-gradient(-45deg,transparent 0 39px,rgba(230,192,145,.04) 39px 40px),#3b1a1f;padding-top:72px;padding-bottom:68px}
+.section-heading{margin-bottom:30px}
+.events .section-heading h2{color:#fff0da}
+.section-heading p{color:#dbb77e}
+.event-card{background:radial-gradient(circle at 50% 16%,#fff8ed,#f2e4cd);border:1px solid #be9467;box-shadow:10px 10px 0 rgba(13,4,7,.35);padding:31px 20px 32px}
+.event-card::before{border-color:rgba(140,61,47,.35)}
+.event-card::after{content:"◆";position:absolute;top:-12px;left:calc(50% - 11px);width:22px;height:22px;background:#3b1a1f;color:#d6ac76;font-size:16px;line-height:22px}
+.event-number,.event-date b{color:#9b473c}
+.event-divider{background:#af6652}
+.gift{position:relative;background:radial-gradient(circle at 50% 10%,#642a2c,#35171a 72%);padding-top:72px;padding-bottom:70px}
+.gift::before{content:"";position:absolute;top:0;left:0;right:0;height:31px;background:url('../../assets/batak/gorga-border.png') center/auto 100% repeat-x}
+.gift .section-heading p{color:#e3c996}
+.gift-intro{color:#eaded0;margin-bottom:24px}
+.gift-toggle{background:#c6a56a;color:#38191b}
+.account{position:relative;overflow:hidden;background:radial-gradient(circle at 90% 100%,rgba(191,143,91,.16),transparent 48%),#f8efe1;border:1px solid #c69b65;padding:35px 28px 28px;box-shadow:8px 8px 0 rgba(12,4,6,.3),inset 0 0 0 7px #f8efe1,inset 0 0 0 8px rgba(139,64,52,.26)}
+.account::before{content:"";position:absolute;top:0;left:0;right:0;height:22px;background:url('../../assets/batak/gorga-border.png') center/auto 100% repeat-x}
+.account::after{content:"";position:absolute;right:-14px;top:49px;width:205px;height:205px;background:url('../../assets/batak/dani-rosi-logo.png') center/contain no-repeat;opacity:.11;pointer-events:none}
+.account-header,.account-details,.account button{position:relative;z-index:1}
+.account-header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:19px;border-bottom:1px solid rgba(137,75,55,.3)}
+.account-mark{font:400 20px var(--serif);color:#6a2829;white-space:nowrap}
+.account-header small{color:#8b6051;text-align:right}
+.account-details{padding:22px 0 19px}
+.account-bank{display:flex;align-items:baseline;gap:10px}
+.account-bank span{font-size:8px;font-weight:700;letter-spacing:.2em;color:#9a705b}
+.account h3{color:#722b2a;margin:0 0 16px;font-size:31px}
+.account-number{font:400 clamp(20px,5.7vw,26px) var(--serif);letter-spacing:.035em;color:#451e21;white-space:nowrap;margin:0 0 7px}
+.account .account-owner{font-size:11px;color:#785b54}
+.account button{position:relative;z-index:1;display:inline-flex;align-items:center;justify-content:space-between;gap:20px;width:100%;margin:0;padding:13px 15px;border:1px solid #a66f4d;background:#5b2528;color:#fff0db;text-align:left;font-size:9px;font-weight:700;letter-spacing:.13em;cursor:pointer}
+.account button span{font-size:17px;line-height:1;color:#e3bd83}
+.account button:hover{background:#743238}
+.wishes{position:relative;padding-top:76px;padding-bottom:80px;background:radial-gradient(circle at 50% 0,rgba(190,144,89,.2),transparent 60%),#f2e6d4;color:#462125;text-align:center}
+.wishes::before,.wishes::after{content:"";position:absolute;left:0;right:0;height:29px;background:url('../../assets/batak/gorga-border.png') center/auto 100% repeat-x}
+.wishes::before{top:0}.wishes::after{bottom:0;transform:rotate(180deg)}
+.wishes .section-heading p{color:#8f5040}.wishes .section-heading h2{color:#4b2225;font-size:clamp(46px,11vw,62px)}
+.wishes-intro{font-size:12px;line-height:1.8;max-width:360px;margin:0 auto 27px;color:#70514b}
+.wishes-form{max-width:400px;margin:auto;padding:25px;background:#fff8ed;border:1px solid #cba776;box-shadow:7px 7px 0 rgba(100,44,41,.15);text-align:left}
+.wishes-form label{display:block;margin:0 0 7px;color:#813d35;font-size:9px;font-weight:700;letter-spacing:.17em;text-transform:uppercase}
+.wishes-form input,.wishes-form textarea{display:block;width:100%;margin:0 0 19px;padding:12px 13px;border:1px solid #d8bfa0;border-radius:0;background:#fffdfa;color:#422124;font:12px/1.6 'DM Sans',sans-serif;resize:vertical}
+.wishes-form input:focus,.wishes-form textarea:focus{outline:2px solid #9d5a43;outline-offset:2px}
+.wishes-form button{display:flex;align-items:center;justify-content:space-between;width:100%;padding:13px 15px;border:1px solid #5b2528;background:#5b2528;color:#fff0db;font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;cursor:pointer}
+.wishes-form button span{font-size:17px;color:#e3bd83}.wishes-form button:hover{background:#743238}
+.wishes-status{min-height:1.5em;margin:10px 0 0;color:#6f3732;font-size:10px;line-height:1.5}
+.wishes-list{max-width:400px;min-height:148px;margin:auto;text-align:left}
+.wishes-empty{padding:18px;border:1px solid rgba(127,75,55,.3);color:#80665d;text-align:center;font-size:11px}
+.wish-card{min-height:148px;padding:20px 21px;background:#fff8ed;border-left:3px solid #a97149;box-shadow:0 4px 16px rgba(74,35,27,.08);animation:wish-appear .4s ease}
+.wish-card[hidden]{display:none}
+.wish-card-heading{display:flex;justify-content:space-between;align-items:baseline;gap:12px}.wish-card strong{font:500 20px var(--serif);color:#5b2528;overflow-wrap:anywhere}.wish-card time{font-size:9px;color:#9a7462;white-space:nowrap}.wish-card p{margin:9px 0 0;font-size:11px;line-height:1.7;color:#684841;white-space:pre-wrap;overflow-wrap:anywhere}
+.wish-card p{max-height:170px;overflow-y:auto}
+.wishes-controls{display:flex;align-items:center;justify-content:center;gap:17px;margin:17px auto 0;color:#6c3833;font-size:10px;letter-spacing:.13em}
+.wishes-controls[hidden]{display:none}
+.wishes-controls button{width:34px;height:34px;border:1px solid #aa7758;border-radius:50%;background:#fff8ed;color:#6c3833;font-size:16px;cursor:pointer}
+.wishes-controls button:hover{background:#5b2528;color:#fff8ed}
+@keyframes wish-appear{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+.footer{position:relative;color:#f1e4d3;padding-top:75px;padding-bottom:65px;background:radial-gradient(circle at 50% 30%,rgba(137,61,52,.42),transparent 72%),repeating-linear-gradient(45deg,transparent 0 34px,rgba(224,177,114,.04) 34px 35px),repeating-linear-gradient(-45deg,transparent 0 34px,rgba(224,177,114,.04) 34px 35px),#35171a}
+.footer::before,.footer::after{content:"";position:absolute;left:0;right:0;height:31px;background:url('../../assets/batak/gorga-border.png') center/auto 100% repeat-x}
+.footer::before{top:0}.footer::after{bottom:0;transform:rotate(180deg)}
+.footer p{color:#eadac7;margin:20px auto 9px}
+.footer h2{margin-bottom:30px}
+.footer-copyright{display:grid;justify-items:center;gap:13px;margin-top:8px;padding-top:23px;border-top:1px solid rgba(210,165,111,.35)}
+.footer-copyright small{font-size:9px;letter-spacing:.12em;line-height:1.6}
+.footer-copyright nav{display:flex;flex-wrap:wrap;justify-content:center;gap:9px 20px}
+.footer-copyright a{color:#e6c695;font-size:10px;line-height:1.6;text-decoration:none;border-bottom:1px solid rgba(230,198,149,.55)}
+.footer-copyright a:hover,.footer-copyright a:focus-visible{color:#fff2df;border-color:currentColor}
+.music-control{position:fixed;z-index:30;right:max(16px,calc((100vw - 520px)/2 + 16px));bottom:16px;width:48px;height:48px;border:1px solid #d8b782;border-radius:50%;background:#4a2024;color:#f7e8cf;font-size:23px;cursor:pointer;box-shadow:0 6px 22px rgba(35,15,16,.32)}
+.music-control[hidden]{display:none}
+.music-control.is-playing{animation:music-pulse 3s ease-in-out infinite}
+.music-control:focus-visible{outline:2px solid #f7e8cf;outline-offset:3px}
+@keyframes music-pulse{50%{box-shadow:0 6px 22px rgba(35,15,16,.32),0 0 0 7px rgba(198,165,106,.17)}}
+.footer-flourish{font-size:20px}
+.footer small{color:#d7b98b}
+.motion-ready .opening:not(.entered) .opening-inner>*{opacity:0;transform:translateY(22px)}
+.motion-ready .opening:not(.entered) .scroll-cue{opacity:0}
+.motion-ready .opening.entered .opening-inner>*{animation:opening-rise .7s cubic-bezier(.2,.75,.25,1) both}
+.motion-ready .opening.entered .opening-inner>*:nth-child(1){animation-delay:.27s}
+.motion-ready .opening.entered .opening-inner>*:nth-child(2){animation-delay:.42s}
+.motion-ready .opening.entered .opening-inner>*:nth-child(3){animation-delay:.6s}
+.motion-ready .opening.entered .opening-inner>*:nth-child(4){animation-delay:.76s}
+.motion-ready .opening.entered .opening-inner>*:nth-child(5){animation-delay:.95s}
+.motion-ready .opening.entered .opening-inner>*:nth-child(6){animation-delay:1.08s}
+.motion-ready .opening.entered .scroll-cue{animation:opening-rise .65s 1.25s both}
+.motion-ready .opening.entered .opening-line::before{transform-origin:center;animation:gorga-unfold .95s .3s both}
+.motion-ready .scroll-reveal{opacity:0;transform:translateY(24px);transition:opacity .85s ease,transform .85s cubic-bezier(.2,.75,.25,1)}
+.motion-ready .scroll-reveal.is-visible{opacity:1;transform:none}
+@keyframes opening-rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes gorga-unfold{from{opacity:0;transform:scaleX(.3)}to{opacity:1;transform:scaleX(1)}}
+@keyframes ornament-breathe{50%{filter:drop-shadow(0 10px 17px rgba(218,151,83,.31));transform:translateY(-4px)}}
+@media(max-width:380px){.cover-frame{padding-top:61px;padding-bottom:64px}.cover::before,.cover::after{height:25px}.cover-emblem{width:145px;height:125px}.opening{min-height:770px}.opening-logo{width:155px;height:155px}.opening .full-names{font-size:46px}.full-names .bride-name{font-size:35px}}
+@media(max-height:700px){.cover-frame{min-height:0;padding-top:47px;padding-bottom:46px}.cover-emblem{width:125px;height:108px;margin-bottom:2px}.horas{font-size:20px;margin:5px 0 7px}.cover h1{font-size:55px;margin:12px 0 14px}.cover-bottom strong{margin-bottom:14px}.cover-bottom button{padding:11px 15px}}
+@media(prefers-reduced-motion:reduce){.cover-emblem,.music-control.is-playing,.wish-card,.motion-ready .opening.entered .opening-inner>*,.motion-ready .opening.entered .opening-line::before,.motion-ready .opening.entered .scroll-cue{animation:none}.cover-frame,.motion-ready .scroll-reveal{transition:none}.motion-ready .opening:not(.entered) .opening-inner>*,.motion-ready .opening:not(.entered) .scroll-cue,.motion-ready .scroll-reveal{opacity:1;transform:none}}
