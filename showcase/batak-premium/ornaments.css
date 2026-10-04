@@ -1,0 +1,23 @@
+/* Ornamen Batak Toba dari aset gorga dan Rumah Batak yang sudah dipakai proyek. */
+.count{position:relative;isolation:isolate;overflow:hidden}
+.count::before{content:"";position:absolute;inset:28px 0 8px;background:url('../../assets/batak/rumah-batak.png') center bottom/78% auto no-repeat;opacity:.13;pointer-events:none;z-index:-1}
+.events,.story,.gallery,.rsvp{position:relative}
+.events::before,.story::before,.gallery::before,.rsvp::before{content:"";position:absolute;left:0;right:0;height:34px;background:#151011 url('../../assets/batak/gorga-border.png') center/auto 100% repeat-x;pointer-events:none}
+.events::before,.story::before,.gallery::before,.rsvp::before{top:0}
+.person-copy{padding-bottom:58px}
+.person-photo{height:auto;aspect-ratio:2/3;background:#211315}
+.person-photo img,.person.bride .person-photo img{object-fit:contain;object-position:center}
+.person-copy::after{content:"";position:absolute;left:0;right:0;bottom:0;height:32px;background:#151011 url('../../assets/batak/gorga-border.png') center/auto 100% repeat-x;pointer-events:none}
+.event-grid article{position:relative;overflow:hidden;padding-bottom:72px}
+.event-grid article::after{content:"";position:absolute;left:0;right:0;bottom:0;height:42px;background:#151011 url('../../assets/batak/gorga-border.png') center/auto 100% repeat-x;opacity:.85;pointer-events:none}
+.story-art{box-shadow:6px 6px 0 #6b2929,7px 7px 0 #c7a46b}
+.story .timeline{position:relative;gap:27px;padding-left:13px}
+.story .timeline::before{content:"";position:absolute;left:3px;top:28px;bottom:28px;width:1px;background:#ad795c}
+.story .timeline article{position:relative;gap:16px;padding:17px 14px 42px;background:#eadfce;border:1px solid #c7ab83;box-shadow:3px 4px 0 #d4c2a8}
+.story .timeline article::before{content:"";position:absolute;left:-15px;top:30px;width:10px;height:10px;background:#782d2c;border:2px solid #c7a46b;transform:rotate(45deg)}
+.story .timeline article::after{content:"";position:absolute;left:0;right:0;bottom:0;height:24px;background:#151011 url('../../assets/batak/gorga-border.png') center/auto 100% repeat-x}
+.story .timeline b{color:#73302d}
+.story .timeline h3{color:#321b1c}
+.story .timeline p{color:#3f3330}
+.gallery .section-title{border-bottom:1px solid #b78e65;padding-bottom:17px}
+@media(max-width:380px){.count::before{background-size:95% auto}.person-copy{padding-bottom:62px}.story .timeline article{gap:11px;padding:14px 11px 39px}.story .timeline h3{font-size:28px}}
