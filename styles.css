@@ -1601,3 +1601,70 @@ button {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: 0.01ms !important; }
 }
+
+/* Temporary static previews for the three signature invitation designs. */
+.portfolio-grid.signature-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.signature-card {
+  min-width: 0;
+  min-height: 590px;
+  justify-content: space-between;
+  padding: 24px 22px 26px;
+  color: #fff;
+}
+
+.signature-blue { background: linear-gradient(150deg, #dbe9f3, #829fb9); color: #253e53; }
+.signature-premium { background: linear-gradient(150deg, #4e3130, #1c1012); }
+.signature-classic { background: linear-gradient(150deg, #55272a, #230f13); }
+
+.signature-card-top,
+.signature-card-bottom { position: relative; z-index: 2; width: 100%; }
+.signature-card-top { display: flex; justify-content: space-between; gap: 12px; font-size: 0.62rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+.signature-card-top span:last-child { text-align: right; }
+
+.signature-phone {
+  width: min(216px, 76%);
+  height: 385px;
+  margin: 10px auto 14px;
+  flex: none;
+  transform: none;
+}
+.signature-card:nth-child(2) .signature-phone { transform: none; }
+.signature-card:hover .signature-phone { transform: translateY(-5px); }
+.signature-screen { padding: 0; display: block; }
+.signature-screen > img:not(.signature-house) { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; }
+.signature-screen-blue > img { object-position: 49% center; }
+.signature-screen-premium > img { object-position: 52% center; }
+.signature-screen::after { content: ""; position: absolute; z-index: 1; inset: 0; background: linear-gradient(180deg, rgba(12, 18, 24, .24) 0%, transparent 36%, rgba(11, 15, 21, .78) 100%); }
+.signature-screen-copy { position: absolute; z-index: 3; inset: auto 14px 31px; display: grid; gap: 8px; color: #fff; text-align: center; }
+.signature-screen-copy small { font-size: .5rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; }
+.signature-screen-copy strong { font: 500 2.05rem/.92 "Cormorant Garamond", serif; }
+.signature-screen-copy strong i { color: #e1bf8b; font-weight: 400; }
+.signature-screen-copy span { font-size: .5rem; letter-spacing: .2em; }
+
+.signature-screen-classic {
+  background: repeating-linear-gradient(45deg, transparent 0 31px, rgba(199, 154, 105, .07) 31px 32px),
+    repeating-linear-gradient(-45deg, transparent 0 31px, rgba(199, 154, 105, .07) 31px 32px),
+    radial-gradient(circle at 50% 42%, #6b3434, #281315 78%);
+}
+.signature-screen-classic::after { background: linear-gradient(180deg, rgba(28, 11, 14, .1), transparent 45%, rgba(24, 7, 10, .55)); }
+.signature-screen-classic .signature-screen-copy { bottom: 71px; }
+.signature-house { position: absolute; z-index: 2; top: 77px; left: 50%; width: 122px; height: 105px; object-fit: contain; transform: translateX(-50%); filter: drop-shadow(0 8px 11px rgba(0,0,0,.35)); }
+.signature-gorga { position: absolute; z-index: 3; top: 0; left: 0; right: 0; height: 20px; background: #130b0b url("assets/batak/gorga-border.png") center/auto 20px repeat-x; }
+.signature-gorga-bottom { top: auto; bottom: 0; }
+
+.signature-card-bottom h3 { margin: 0 0 5px; font: 600 2rem/1 "Cormorant Garamond", serif; }
+.signature-card-bottom p { min-height: 43px; margin: 0 0 12px; font-size: .82rem; line-height: 1.55; }
+.signature-card-bottom > span { display: inline-block; border-top: 1px solid currentColor; padding-top: 10px; font-size: .58rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; opacity: .86; }
+.signature-disclaimer { max-width: 720px; margin: 23px auto 0; color: var(--muted); font-size: .78rem; line-height: 1.6; text-align: center; }
+
+@media (max-width: 920px) {
+  .portfolio-grid.signature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 620px) {
+  .portfolio-grid.signature-grid { grid-template-columns: 1fr; }
+  .signature-card { min-height: 585px; }
+}
