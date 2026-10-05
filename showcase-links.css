@@ -1,0 +1,17 @@
+.signature-demo-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 44px;
+  padding: 11px 15px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  color: inherit;
+  text-decoration: none;
+  font-size: .75rem;
+  font-weight: 600;
+  transition: background .2s ease, transform .2s ease;
+}
+.signature-demo-link:hover { background: rgba(255,255,255,.13); transform: translateY(-2px); }
+.signature-demo-link:focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }
