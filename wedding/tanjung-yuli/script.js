@@ -11,10 +11,15 @@ document.getElementById('open-invitation').addEventListener('click', openInvitat
 if (new URLSearchParams(location.search).get('preview') === '1') openInvitation();
 
 document.getElementById('share').addEventListener('click', async () => {
+  const invitationUrl = new URL(location.href);
+  invitationUrl.searchParams.delete('preview');
+  invitationUrl.hash = '';
+  const recipient = guest && guest.trim() ? guest.trim().slice(0, 100) : 'Bapak/Ibu/Saudara/i';
+  const invitationText = `Kepada Yth.\n${recipient}\n\nShalom, Horas.\n\nTanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri pernikahan kami:\n\nTanjung Mulia Manurung & Yuli Meiliana, S.P\n\nSenin, 26 Oktober 2026, mulai pukul 10.00 WIB\nKhatib Darus, Dusun VII, Kec. Gebang, Kab. Langkat\n\nBerikut link undangan kami untuk informasi lengkap acara:\n${invitationUrl.href}\n\nMerupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.\n\nTerima kasih.\nTanjung & Yuli`;
   if (navigator.share) {
-    try { await navigator.share({ title: 'Undangan Pernikahan Tanjung & Yuli', url: location.href }); } catch (_) {}
+    try { await navigator.share({ title: 'Undangan Pernikahan Tanjung & Yuli', text: invitationText }); } catch (_) {}
   } else if (navigator.clipboard) {
-    await navigator.clipboard.writeText(location.href);
+    await navigator.clipboard.writeText(invitationText);
     const button = document.getElementById('share');
     button.textContent = 'Tersalin ✓';
     setTimeout(() => { button.textContent = 'Bagikan ↗'; }, 2200);
