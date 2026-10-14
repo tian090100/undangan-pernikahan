@@ -62,3 +62,14 @@
 .batak-final-frame{z-index:2}
 .motion-text{z-index:3}
 .motion .next{z-index:4}
+.motion:after{
+  content:'';position:absolute;inset:0;z-index:2;
+  background:url('batak-ornaments-v1.png') center/cover no-repeat;
+  mask-image:linear-gradient(90deg,#000 0 14%,transparent 21% 79%,#000 86%);
+  -webkit-mask-image:linear-gradient(90deg,#000 0 14%,transparent 21% 79%,#000 86%);
+  pointer-events:none;opacity:0;
+}
+.batak-playing:after{animation:ulosFrameIn 2.5s 2s both}
+.batak-final-frame{z-index:3}
+.motion-text{z-index:4}.motion .next{z-index:5}
+@media(prefers-reduced-motion:reduce){.motion:after{opacity:1;animation:none}}
