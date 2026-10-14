@@ -73,3 +73,16 @@
 .batak-final-frame{z-index:3}
 .motion-text{z-index:4}.motion .next{z-index:5}
 @media(prefers-reduced-motion:reduce){.motion:after{opacity:1;animation:none}}
+.home-keepsake{margin:22px auto 0;width:min(100%,250px);text-align:center}
+.keepsake-photo{
+  width:clamp(125px,36vw,170px);height:clamp(180px,27svh,240px);margin:auto;
+  border-radius:100px 100px 12px 12px;border:3px double #b58b52;
+  background:url('../rexy-sihombing/assets/hero-triptych.png') 50% 50%/auto 100% no-repeat;
+  box-shadow:0 5px 18px #6b31211a,0 0 0 5px #fff6;
+}
+.keepsake-divider{display:flex;align-items:center;justify-content:center;gap:12px;color:#b58b52;margin:18px auto 10px}
+.keepsake-divider span{width:38px;height:1px;background:linear-gradient(90deg,transparent,#b58b52,transparent)}
+.home-keepsake>p{font:italic 21px/1.2 'Cormorant Garamond',Georgia,serif;color:#792d28;letter-spacing:0}
+.home-keepsake>small{display:block;font:10px/1.65 'Cormorant Infant',Georgia,serif;color:#805641;margin-top:9px}
+.motion-text{top:13%}
+@media(max-height:700px){.home-keepsake{margin-top:14px}.keepsake-photo{width:125px;height:170px}.keepsake-divider{margin:12px auto 7px}.home-keepsake>p{font-size:18px}.home-keepsake>small{font-size:9px}.motion-text{top:12%}.motion-text h2{margin-top:10px;margin-bottom:10px}}
