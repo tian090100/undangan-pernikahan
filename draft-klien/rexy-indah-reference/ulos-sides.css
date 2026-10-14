@@ -16,3 +16,39 @@
 .unfold .ulos-panel-left{transform:translateX(-104%)}
 .unfold .ulos-panel-right{transform:translateX(104%) scaleX(-1)}
 @media(prefers-reduced-motion:reduce){.ulos-opening{display:none!important}}
+
+/* Animate the actual page-one ulos artwork, returning to its exact resting edges. */
+.integrated-ulos-scene{transform:none;animation:none}
+.ulos-panel{
+  width:50%;
+  background-color:transparent;
+  background-image:url('ulos-opening-integrated-v2.png');
+  background-size:200% 100%;
+  background-repeat:no-repeat;
+  box-shadow:none;
+  border:0;
+  filter:drop-shadow(0 2px 3px #3d101233);
+  transition:transform 2.6s cubic-bezier(.65,.02,.2,1);
+}
+.ulos-panel-left{
+  background-position:left center;
+  clip-path:polygon(0 5%,58% 5%,47% 12%,34% 19%,22% 29%,22% 40%,30% 54%,37% 67%,33% 77%,48% 89%,0 94%);
+  transform:translateX(84%);
+}
+.ulos-panel-right{
+  background-position:right center;
+  clip-path:polygon(100% 5%,42% 5%,53% 12%,66% 19%,78% 29%,78% 40%,70% 54%,63% 67%,67% 77%,52% 89%,100% 94%);
+  transform:translateX(-84%);
+}
+.ulos-panel:before,.ulos-panel:after{display:none}
+.unfold .ulos-panel-left,.unfold .ulos-panel-right{transform:translateX(0)}
+.ulos-opening:before,.ulos-opening:after{
+  content:'';position:absolute;top:5%;bottom:6%;width:50.5%;
+  background:#601c24 url('ulos-opening-integrated-v2.png') left center/1200% 100% no-repeat;
+  transition:transform 2.6s cubic-bezier(.65,.02,.2,1);
+}
+.ulos-opening:before{left:0;transform-origin:left center}
+.ulos-opening:after{right:0;transform-origin:right center;background-position:right center}
+.unfold:before,.unfold:after{transform:scaleX(0)}
+.ulos-opening.unfold{animation:finishUlos .25s 2.35s both}
+@keyframes finishUlos{to{opacity:0}}
