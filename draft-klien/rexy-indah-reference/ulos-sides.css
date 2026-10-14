@@ -4,3 +4,15 @@
 .motion-text{z-index:2}.motion .next{z-index:3}
 @keyframes ulosSceneSettle{to{transform:scale(1)}}
 @media(prefers-reduced-motion:reduce){.integrated-ulos-scene{animation:none;transform:none}}
+
+/* Click-triggered woven curtain: closed at first, then opens from the seam. */
+.ulos-opening{position:fixed;top:0;bottom:0;left:50%;width:min(100%,450px);transform:translateX(-50%);z-index:60;opacity:0;transition:opacity .35s ease;pointer-events:none;overflow:hidden}
+.ulos-opening.visible{opacity:1}
+.ulos-panel{position:absolute;top:0;bottom:0;width:50.5%;background-color:#541c23;background-image:linear-gradient(90deg,#1a090ab3,transparent 18%,#ffffff12 35%,#20090b66 55%,transparent 75%,#190707aa),repeating-linear-gradient(0deg,#f9dbc00a 0 1px,transparent 1px 3px),url('ulos-side-v1.png');background-size:auto,auto,auto 115%;background-repeat:no-repeat,repeat,no-repeat;box-shadow:inset 0 0 20px #15060688;will-change:transform;transition:transform 2.6s cubic-bezier(.65,.02,.2,1)}
+.ulos-panel-left{left:0;background-position:center,center,left center;border-right:1px solid #d4af7977;transform-origin:left center}
+.ulos-panel-right{right:0;background-position:center,center,left center;transform:scaleX(-1);transform-origin:center}
+.ulos-panel:before,.ulos-panel:after{content:'';position:absolute;left:0;right:0;height:24px;background:url('../../assets/batak/gorga-border.png') center/auto 24px repeat-x;border-block:1px solid #d4af7988}
+.ulos-panel:before{top:8%}.ulos-panel:after{bottom:8%}
+.unfold .ulos-panel-left{transform:translateX(-104%)}
+.unfold .ulos-panel-right{transform:translateX(104%) scaleX(-1)}
+@media(prefers-reduced-motion:reduce){.ulos-opening{display:none!important}}
