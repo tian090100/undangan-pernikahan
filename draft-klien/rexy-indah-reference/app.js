@@ -8,8 +8,7 @@
   $$('input[name=name]').forEach(el => el.value = guest === 'Tamu Undangan' ? '' : guest.slice(0,60));
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   let opened = false, photo = 0, story = 0, photoTimer, storyTimer, audioContext, playing = false;
-  const video = { pause() {} };
-  let openingTimer;
+  const video = $('#opening-video');
   const observer = 'IntersectionObserver' in window ? new IntersectionObserver(entries => entries.forEach(entry => {if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}}),{threshold:.12}) : null;
   function startReveals(){if(observer){document.body.classList.add('animated');$$('.reveal').forEach(el => observer.observe(el));}}
   function showPhoto(index){photo=(index+3)%3;$$('.slide').forEach((el,i)=>el.classList.toggle('active',i===photo));$$('[data-photo]').forEach((el,i)=>{el.classList.toggle('active',i===photo);el.setAttribute('aria-pressed',String(i===photo));});}
@@ -19,29 +18,18 @@
   $('#story-prev').addEventListener('click',()=>{showStory(story-1);syncTimers();});
   $('#story-next').addEventListener('click',()=>{showStory(story+1);syncTimers();});
   function revealMotionText(){$('.motion-text').classList.add('shown');}
-  function finishOpening(){
-    clearTimeout(openingTimer);
-    $('#batak-opening').hidden=true;
-    $('#cover').hidden=true;
-    $('#contents').inert=false;
-    document.body.classList.remove('locked');
-    $('#music').hidden=false;
-    revealMotionText();startReveals();syncTimers();
-  }
   async function open(){
     if(opened)return;opened=true;$('#open').disabled=true;
-    $('#contents').hidden=false;$('#contents').inert=true;window.scrollTo(0,0);
-    if(reduced.matches || params.get('preview')==='1'){finishOpening();return;}
+    $('#contents').hidden=false;$('#music').hidden=false;
     const cover=$('#cover');cover.style.position='absolute';cover.style.inset='0 0 auto';
-    const opening=$('#batak-opening');opening.hidden=false;
-    requestAnimationFrame(()=>requestAnimationFrame(()=>{
-      opening.classList.add('running');cover.classList.add('signature-fading');
-      $('.motion').classList.add('scene-entering');
-    }));
-    openingTimer=setTimeout(finishOpening,5400);
+    requestAnimationFrame(()=>cover.classList.add('leaving'));
+    document.body.classList.remove('locked');window.scrollTo(0,0);startReveals();syncTimers();
+    setTimeout(()=>cover.hidden=true,reduced.matches?0:1300);
+    if(reduced.matches){video.hidden=true;revealMotionText();return;}
+    setTimeout(revealMotionText,3000);
+    try{await video.play();}catch{revealMotionText();}
   }
-  $('#skip-opening').addEventListener('click',finishOpening);
-  $('#batak-opening').addEventListener('keydown',event=>{if(event.key==='Escape')finishOpening();});
+  video.addEventListener('error',revealMotionText);video.addEventListener('ended',revealMotionText);
   $('#open').addEventListener('click',open);
   $('#music').addEventListener('click',async()=>{
     if(!audioContext){audioContext=new (window.AudioContext||window.webkitAudioContext)();const gain=audioContext.createGain();gain.gain.value=.025;gain.connect(audioContext.destination);[130.81,164.81,196].forEach(freq=>{const oscillator=audioContext.createOscillator();oscillator.type='sine';oscillator.frequency.value=freq;oscillator.connect(gain);oscillator.start();});}
