@@ -1,0 +1,9 @@
+
+.motion{isolation:isolate;background:#e9d6b5;overflow:hidden}
+.illustrated-toba-scene{position:absolute;inset:-3%;z-index:0;background:#e9d6b5 url('toba-illustration-v1.png') center/cover no-repeat;animation:paintedToba 18s ease-in-out infinite alternate;transform-origin:50% 60%}
+.illustrated-toba-clouds{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,#ffedcc88 5%,#f9e5c84d 38%,transparent 60%),radial-gradient(ellipse at 40% 49%,#fff5,transparent 42%);animation:paintedMist 15s ease-in-out infinite alternate;pointer-events:none}
+.integrated-ulos-scene{z-index:2;background-size:100% 100%;mask-image:radial-gradient(ellipse 46% 43% at 50% 49%,transparent 96%,#000 98%);-webkit-mask-image:radial-gradient(ellipse 46% 43% at 50% 49%,transparent 96%,#000 98%);transform:none;animation:none;pointer-events:none}
+.motion-text{z-index:3;text-shadow:0 1px 9px #fff6}.motion .next{z-index:4}
+@keyframes paintedToba{from{transform:scale(1.035) translateX(-.5%)}to{transform:scale(1.075) translateX(.5%)}}
+@keyframes paintedMist{from{opacity:.65;transform:translateX(-1%)}to{opacity:.9;transform:translateX(1%)}}
+@media(prefers-reduced-motion:reduce){.illustrated-toba-scene,.illustrated-toba-clouds{animation:none;transform:none}}

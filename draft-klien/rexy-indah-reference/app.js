@@ -18,31 +18,16 @@
   $('#story-prev').addEventListener('click',()=>{showStory(story-1);syncTimers();});
   $('#story-next').addEventListener('click',()=>{showStory(story+1);syncTimers();});
   function revealMotionText(){$('.motion-text').classList.add('shown');}
-  let introTimer,finishTimer;
-  function finishToba(){
-    clearTimeout(introTimer);clearTimeout(finishTimer);
-    $('#toba-intro').hidden=true;$('#cover').hidden=true;
-    $('#contents').inert=false;document.body.classList.remove('locked');
-    $('#music').hidden=false;revealMotionText();startReveals();syncTimers();
-  }
-  function fadeToba(){
-    clearTimeout(introTimer);
-    $('#toba-intro').classList.add('fading');
-    revealMotionText();
-    finishTimer=setTimeout(finishToba,1100);
-  }
   async function open(){
     if(opened)return;opened=true;$('#open').disabled=true;
-    $('#contents').hidden=false;$('#contents').inert=true;
-    window.scrollTo(0,0);
-    if(reduced.matches||params.get('preview')==='1'){finishToba();return;}
-    $('#cover').hidden=true;
-    const intro=$('#toba-intro');intro.hidden=false;
-    requestAnimationFrame(()=>requestAnimationFrame(()=>intro.classList.add('playing')));
-    introTimer=setTimeout(fadeToba,4200);
-    $('#skip-toba').focus({preventScroll:true});
+    $('#contents').hidden=false;$('#contents').inert=false;
+    const cover=$('#cover');cover.style.position='absolute';cover.style.inset='0 0 auto';
+    requestAnimationFrame(()=>cover.classList.add('leaving'));
+    document.body.classList.remove('locked');window.scrollTo(0,0);
+    $('#music').hidden=false;startReveals();syncTimers();
+    setTimeout(()=>cover.hidden=true,reduced.matches?0:1300);
+    setTimeout(revealMotionText,reduced.matches?0:700);
   }
-  $('#skip-toba').addEventListener('click',finishToba);
   video.addEventListener('error',revealMotionText);video.addEventListener('ended',revealMotionText);
   $('#open').addEventListener('click',open);
   $('#music').addEventListener('click',async()=>{
