@@ -86,3 +86,6 @@
 .home-keepsake>small{display:block;font:10px/1.65 'Cormorant Infant',Georgia,serif;color:#805641;margin-top:9px}
 .motion-text{top:13%}
 @media(max-height:700px){.home-keepsake{margin-top:14px}.keepsake-photo{width:125px;height:170px}.keepsake-divider{margin:12px auto 7px}.home-keepsake>p{font-size:18px}.home-keepsake>small{font-size:9px}.motion-text{top:12%}.motion-text h2{margin-top:10px;margin-bottom:10px}}
+.home-batak-mark{margin:35px auto 0;text-align:center}
+.home-batak-mark img{display:block;width:100px;height:118px;object-fit:contain;margin:auto;filter:drop-shadow(0 3px 6px #6b31211a)}
+@media(max-height:700px){.home-batak-mark{margin-top:22px}.home-batak-mark img{width:80px;height:96px}}
