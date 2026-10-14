@@ -1,9 +1,13 @@
 /* Toba sits below the oval; the name panel stays ivory. */
 .motion{isolation:isolate;background:#e9d6b5;overflow:hidden}
-.illustrated-toba-scene{position:absolute;left:0;right:0;top:78%;bottom:0;z-index:2;background:#e9d6b5 url('toba-illustration-v1.png') center 66%/cover no-repeat;animation:paintedToba 18s ease-in-out infinite alternate;transform-origin:50% 60%;clip-path:ellipse(100% 90% at 50% 100%)}
-.illustrated-toba-clouds{position:absolute;left:0;right:0;top:80%;bottom:0;z-index:3;background:radial-gradient(ellipse at 40% 49%,#fff3,transparent 65%);animation:paintedMist 15s ease-in-out infinite alternate;pointer-events:none}
+.illustrated-toba-scene{position:absolute;left:0;right:0;top:75%;bottom:0;z-index:0;background:#e9d6b5 url('toba-illustration-v1.png') center 66%/cover no-repeat;animation:paintedToba 18s ease-in-out infinite alternate;transform-origin:50% 60%}
+.illustrated-toba-clouds{position:absolute;left:0;right:0;top:78%;bottom:0;z-index:0;background:radial-gradient(ellipse at 40% 49%,#fff3,transparent 65%);animation:paintedMist 15s ease-in-out infinite alternate;pointer-events:none}
 .integrated-ulos-scene{z-index:1;background-size:100% 100%;mask-image:none;-webkit-mask-image:none;transform:none;animation:none;pointer-events:none}
 .motion-text{z-index:4;text-shadow:none}.motion .next{z-index:5}
 @keyframes paintedToba{from{transform:scale(1.035) translateX(-.5%)}to{transform:scale(1.075) translateX(.5%)}}
 @keyframes paintedMist{from{opacity:.65;transform:translateX(-1%)}to{opacity:.9;transform:translateX(1%)}}
 @media(prefers-reduced-motion:reduce){.illustrated-toba-scene,.illustrated-toba-clouds{animation:none;transform:none}}
+.integrated-ulos-scene{
+  mask-image:linear-gradient(#000 0 78%,transparent 78%),radial-gradient(ellipse 46% 43% at 50% 49%,#000 98%,transparent 100%),linear-gradient(90deg,#000 0 16%,transparent 23% 77%,#000 84%);
+  -webkit-mask-image:linear-gradient(#000 0 78%,transparent 78%),radial-gradient(ellipse 46% 43% at 50% 49%,#000 98%,transparent 100%),linear-gradient(90deg,#000 0 16%,transparent 23% 77%,#000 84%);
+}
