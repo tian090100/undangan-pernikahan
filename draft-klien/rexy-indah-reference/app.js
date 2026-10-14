@@ -8,7 +8,7 @@
   $$('input[name=name]').forEach(el => el.value = guest === 'Tamu Undangan' ? '' : guest.slice(0,60));
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   let opened = false, photo = 0, story = 0, photoTimer, storyTimer, audioContext, playing = false;
-  const video = $('#opening-video');
+  const video = {hidden:false,pause(){},play(){return Promise.resolve();},addEventListener(){}};
   const observer = 'IntersectionObserver' in window ? new IntersectionObserver(entries => entries.forEach(entry => {if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}}),{threshold:.12}) : null;
   function startReveals(){if(observer){document.body.classList.add('animated');$$('.reveal').forEach(el => observer.observe(el));}}
   function showPhoto(index){photo=(index+3)%3;$$('.slide').forEach((el,i)=>el.classList.toggle('active',i===photo));$$('[data-photo]').forEach((el,i)=>{el.classList.toggle('active',i===photo);el.setAttribute('aria-pressed',String(i===photo));});}
