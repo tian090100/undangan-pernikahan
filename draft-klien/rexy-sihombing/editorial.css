@@ -66,7 +66,7 @@ main {
   background-size: auto 180px;
   background-repeat: repeat;
 }
-.section.dark,
+.events-section.dark,
 .couple-section.paper {
   background-color: transparent;
   background-image:
@@ -79,13 +79,13 @@ main {
     var(--ulos);
   background-size: auto, auto 120px;
 }
-.section.dark .section-header h2,
+.events-section.dark .section-header h2,
 .couple-section .section-header h2,
 .couple-section .person-copy h3 { color: #fff0d3; }
-.section.dark .section-header > p:not(.eyebrow),
+.events-section.dark .section-header > p:not(.eyebrow),
 .couple-section .person-copy > p:last-child,
 .couple-section .person-copy .placeholder { color: #f0ddc3; }
-.section.dark .section-header,
+.events-section.dark .section-header,
 .couple-section .person-copy { text-shadow: 0 1px 3px #24070c99; }
 .draft-note { background: rgba(65,14,23,.92); color: #edd0a1; }
 .dock { background: linear-gradient(rgba(65,19,18,.92),rgba(43,12,10,.94)); }
