@@ -1,0 +1,35 @@
+
+.motion{background:#27100f;height:100svh;min-height:640px;overflow:hidden;color:#ffedcb}
+.toba-scene{position:absolute;inset:0;background:#80766a url('toba-scene.svg') center/cover no-repeat;transform:scale(1.12);transition:transform 6s cubic-bezier(.2,.6,.3,1)}
+.scene-entering .toba-scene{transform:scale(1)}
+.toba-haze{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,#ffe3a31c,transparent 65%),linear-gradient(180deg,#20100c55,transparent 45%,#240b12aa);pointer-events:none}
+.motion-text{top:25%;inset-inline:25px;text-shadow:0 2px 16px #130a08}
+.motion-text>p{color:#efd2a0;font-size:10px;letter-spacing:3px}
+.motion-text h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:52px;font-weight:400;line-height:.95;margin:22px 0}
+.motion-text h2 span{font-size:34px;color:#dcb478}
+.motion .next{color:#e4c591}
+.batak-opening{position:absolute;inset:0 0 auto;height:100svh;min-height:640px;z-index:50;overflow:hidden;perspective:1300px;background:#180b09;opacity:0;transition:opacity .45s}
+.batak-opening.running{opacity:1;background:transparent}
+.gate-leaf{position:absolute;top:0;bottom:0;width:50.2%;background-color:#4b131a;background-image:linear-gradient(#1b090c22,#3b101755),url('../rexy-sihombing/assets/cover-gerbang-clean-v1.png');background-size:auto,200% 100%;border:1px solid #c7a164;box-shadow:inset 0 0 0 7px #180b0bd9,inset 0 0 0 8px #9e7546;backface-visibility:hidden}
+.gate-left{left:0;background-position:center,left center;transform-origin:left center}
+.gate-right{right:0;background-position:center,right center;transform-origin:right center}
+.gate-grain{position:absolute;inset:8%;background:repeating-linear-gradient(90deg,#00000009 0 2px,transparent 2px 7px);pointer-events:none}
+.gate-leaf:before,.gate-leaf:after{content:'';position:absolute;left:0;right:0;height:25px;background:url('../../assets/batak/gorga-border.png') center/auto 25px repeat-x;border-block:1px solid #c7a164;z-index:2}
+.gate-leaf:before{top:7%}.gate-leaf:after{bottom:7%}
+.gate-carving{position:absolute;top:15%;left:15%;width:70%;height:70%;fill:none;stroke:#d3a56e;stroke-width:1.5;stroke-dasharray:1800;stroke-dashoffset:1800;opacity:.8;filter:drop-shadow(0 2px 2px #000)}
+.gate-right .gate-carving{transform:scaleX(-1)}
+.gate-handle{position:absolute;top:49%;right:10%;width:12px;height:44px;border:2px solid #d5b171;border-radius:8px;box-shadow:0 2px 4px #0009;background:#63341e}
+.gate-right .gate-handle{left:10%;right:auto}
+.gate-seal{position:absolute;top:43%;left:15%;right:15%;text-align:center;color:#ffe3af;font:43px 'Cormorant Garamond',Georgia,serif;text-shadow:0 2px 10px #000;opacity:0}
+.gate-seal i{color:#d2a666;font-size:30px}.gate-seal small{display:block;font:8px var(--serif);letter-spacing:2.5px;margin-top:8px}
+#skip-opening{position:absolute;bottom:28px;right:20px;z-index:5;background:#200c0b99;border:1px solid #c7a16466;color:#ecd1a6;border-radius:0;font-size:10px;padding:9px 12px}
+.running .gate-carving{animation:carveGorga 1.8s ease forwards}
+.running .gate-seal{animation:sealGlow 2.5s ease both}
+.running .gate-left{animation:openLeft 3.1s 1.5s cubic-bezier(.35,.02,.18,1) both}
+.running .gate-right{animation:openRight 3.1s 1.5s cubic-bezier(.35,.02,.18,1) both}
+.signature-cover.signature-fading .cover-content{opacity:0;transition:opacity .4s}
+@keyframes carveGorga{to{stroke-dashoffset:0}}
+@keyframes sealGlow{0%{opacity:0;transform:translateY(10px)}30%,60%{opacity:1;transform:none}100%{opacity:0;transform:scale(1.05)}}
+@keyframes openLeft{0%{transform:rotateY(0) translateX(0)}100%{transform:rotateY(-85deg) translateX(-30%);opacity:0}}
+@keyframes openRight{0%{transform:rotateY(0) translateX(0)}100%{transform:rotateY(85deg) translateX(30%);opacity:0}}
+@media(prefers-reduced-motion:reduce){.batak-opening{display:none!important}.toba-scene{transform:none}.motion-text{opacity:1;transform:none}}
