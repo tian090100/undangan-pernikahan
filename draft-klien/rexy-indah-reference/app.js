@@ -8,7 +8,7 @@
   $$('input[name=name]').forEach(el => el.value = guest === 'Tamu Undangan' ? '' : guest.slice(0,60));
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   let opened = false, photo = 0, story = 0, photoTimer, storyTimer, audioContext, playing = false;
-  const video = {hidden:false,pause(){},play(){return Promise.resolve();},addEventListener(){}};
+  const video = $('#opening-video');
   const observer = 'IntersectionObserver' in window ? new IntersectionObserver(entries => entries.forEach(entry => {if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}}),{threshold:.12}) : null;
   function startReveals(){if(observer){document.body.classList.add('animated');$$('.reveal').forEach(el => observer.observe(el));}}
   function showPhoto(index){photo=(index+3)%3;$$('.slide').forEach((el,i)=>el.classList.toggle('active',i===photo));$$('[data-photo]').forEach((el,i)=>{el.classList.toggle('active',i===photo);el.setAttribute('aria-pressed',String(i===photo));});}
@@ -20,13 +20,14 @@
   function revealMotionText(){$('.motion-text').classList.add('shown');}
   async function open(){
     if(opened)return;opened=true;$('#open').disabled=true;
-    $('#contents').hidden=false;$('#contents').inert=false;
+    $('#contents').hidden=false;$('#music').hidden=false;
     const cover=$('#cover');cover.style.position='absolute';cover.style.inset='0 0 auto';
     requestAnimationFrame(()=>cover.classList.add('leaving'));
-    document.body.classList.remove('locked');window.scrollTo(0,0);
-    $('#music').hidden=false;startReveals();syncTimers();
+    document.body.classList.remove('locked');window.scrollTo(0,0);startReveals();syncTimers();
     setTimeout(()=>cover.hidden=true,reduced.matches?0:1300);
-    setTimeout(revealMotionText,reduced.matches?0:700);
+    if(reduced.matches){video.hidden=true;revealMotionText();return;}
+    setTimeout(revealMotionText,3000);
+    try{await video.play();}catch{revealMotionText();}
   }
   video.addEventListener('error',revealMotionText);video.addEventListener('ended',revealMotionText);
   $('#open').addEventListener('click',open);
