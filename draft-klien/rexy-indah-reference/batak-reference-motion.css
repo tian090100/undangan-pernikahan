@@ -1,0 +1,13 @@
+
+.motion{isolation:isolate;background:#f7e8d6}
+.batak-art{position:absolute;inset:0;background:url('batak-ornaments-v1.png') center/cover;opacity:0}
+.batak-final-frame{position:absolute;inset:0;background:url('ulos-opening-integrated-v2.png') center/100% 100%;mask-image:radial-gradient(ellipse 46% 43% at 50% 49%,transparent 97%,#000 99%);opacity:0;z-index:1}
+.batak-oval{position:absolute;left:8%;right:8%;top:9%;bottom:10%;border-radius:50%;background:#f7e8d6;border:1px solid #79110e;transform:scale(.01);opacity:0;z-index:2}
+.motion-text{z-index:3}.motion .next{z-index:4}
+.batak-playing .batak-art{animation:ornamentScene 11s both}
+.batak-playing .batak-final-frame{animation:ulosFrameIn 2.5s 2s both}
+.batak-playing .batak-oval{animation:ovalArrives 4.5s 5.5s cubic-bezier(.3,.05,.2,1) both}
+@keyframes ornamentScene{0%{opacity:0;transform:scale(1.08)}20%,70%{opacity:1}100%{opacity:1;transform:scale(1)}}
+@keyframes ulosFrameIn{from{opacity:0;transform:scale(1.06)}to{opacity:1;transform:scale(1)}}
+@keyframes ovalArrives{0%{opacity:0;transform:scale(.01)}15%{opacity:1}100%{opacity:1;transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){.batak-art,.batak-final-frame,.batak-oval{animation:none!important;opacity:1;transform:none}}
