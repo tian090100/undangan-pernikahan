@@ -23,3 +23,10 @@
   -webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M0 0H100V77H0ZM0 77H16V85H0ZM84 77H100V85H84Z'/%3E%3C/svg%3E");
   mask-size:100% 100%;-webkit-mask-size:100% 100%;
 }
+/* Keep only the outer ulos strips from the image, excluding its baked-in oval. */
+.batak-final-frame{
+  mask-image:linear-gradient(#000 0 5%,transparent 5%),linear-gradient(90deg,#000 0 8%,transparent 8% 92%,#000 92%);
+  -webkit-mask-image:linear-gradient(#000 0 5%,transparent 5%),linear-gradient(90deg,#000 0 8%,transparent 8% 92%,#000 92%);
+  mask-size:100% 100%;-webkit-mask-size:100% 100%;
+}
+.batak-oval{left:8%;right:8%;top:9%;bottom:10%;border-radius:50%;border:1px solid #79110e;background:#f7e8d6}
