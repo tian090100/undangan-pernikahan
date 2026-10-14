@@ -56,3 +56,9 @@
 }
 @keyframes frameGlint{0%{opacity:0;transform:translateX(-65%)}25%{opacity:.4}75%{opacity:.25}100%{opacity:0;transform:translateX(65%)}}
 @media(prefers-reduced-motion:reduce){.batak-oval{animation:none!important;opacity:1;transform:none;filter:none}.batak-oval:after{display:none}}
+/* Side ulos and ornaments sit in front of the wide ivory panel. */
+.batak-art{z-index:0}
+.batak-oval{z-index:1}
+.batak-final-frame{z-index:2}
+.motion-text{z-index:3}
+.motion .next{z-index:4}
