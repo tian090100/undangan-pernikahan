@@ -89,3 +89,18 @@
 .home-batak-mark{margin:35px auto 0;text-align:center}
 .home-batak-mark img{display:block;width:100px;height:118px;object-fit:contain;margin:auto;filter:drop-shadow(0 3px 6px #6b31211a)}
 @media(max-height:700px){.home-batak-mark{margin-top:22px}.home-batak-mark img{width:80px;height:96px}}
+/* Center the full name-and-house composition inside the frame. */
+.motion-text{
+  top:50%;left:25px;right:25px;bottom:auto;
+  transform:translateY(calc(-50% + 24px));
+}
+.motion-text.shown{transform:translateY(-50%)}
+.motion-text h2{font-size:42px;line-height:1.1;margin:18px 0}
+.motion-text>p{font-size:15px}
+.home-batak-mark{margin-top:28px}
+@media(max-height:700px){
+  .motion-text{top:50%}
+  .motion-text h2{font-size:38px;margin:14px 0}
+  .motion-text>p{font-size:13px}
+  .home-batak-mark{margin-top:20px}
+}
