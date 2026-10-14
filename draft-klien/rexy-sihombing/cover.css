@@ -1,0 +1,44 @@
+/* The invitation artwork is the cover; ulos is exclusively an opening effect. */
+.cover{background:#120c0a}
+.cover-artwork{position:absolute;inset:0;width:min(100%,560px);margin:auto;background:url('assets/cover-gerbang-clean-v1.png') center/100% 100% no-repeat}
+.cover-content{position:relative;display:block;padding:0;height:100svh;min-height:0;max-width:560px;margin:auto}
+.cover-top{position:absolute;top:5%;left:17%;width:66%;font-size:6px;letter-spacing:1px;color:#d0ae75}
+.cover-center{position:absolute;top:27%;left:16%;width:68%;margin:0}
+.cover-horas{font:clamp(15px,2.5svh,23px) var(--serif);letter-spacing:7px;color:#dfc699;margin-bottom:clamp(13px,2.6svh,25px)}
+.cover-center .eyebrow{font-size:8px;letter-spacing:2.6px}
+.cover h1{font-size:clamp(36px,6.7svh,61px);letter-spacing:-1px;margin:14px auto 0;max-width:285px;line-height:.97;color:#fff1d5;text-shadow:0 2px 14px #0009}
+.cover h1 em{font-size:clamp(30px,4.5svh,43px);margin:8px 0;line-height:1}
+.cover-center .ornament{height:20px;width:110px;margin:14px auto 0}
+.cover-bottom{position:absolute;bottom:15%;left:17%;width:66%}
+.cover-bottom>p{font:clamp(12px,1.8svh,16px) var(--serif);letter-spacing:1px}
+.cover-bottom strong{font-size:clamp(18px,2.5svh,24px);margin:5px 0 14px;line-height:1.2;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.cover-bottom .button{min-width:0;width:100%;min-height:44px;padding:10px 14px;justify-content:center;gap:13px;background:linear-gradient(110deg,#6b4725,#b89355 50%,#694522);color:#fff0d0;border:1px solid #c5a369;box-shadow:inset 0 0 0 3px #30190b,0 4px 15px #0006;font-family:var(--serif);font-size:14px;letter-spacing:1.5px;text-transform:uppercase;font-weight:400}
+.cover-bottom .button span{font-size:15px;color:#e1c184}
+.cover-bottom small{margin-top:12px;font-size:6px;color:#b99b78;letter-spacing:.5px}
+.opening-transition{position:fixed;inset:0;z-index:110;opacity:0;pointer-events:none;transition:opacity .35s ease}
+.opening-transition.is-visible{opacity:1}
+.opening-transition .curtain{transition:transform 1.7s cubic-bezier(.68,.03,.2,1)}
+.opening-transition.opening .curtain-left{transform:translateX(-103%)}
+.opening-transition.opening .curtain-right{transform:translateX(103%)}
+@media(min-width:1000px){.cover-artwork,.cover-content{margin-left:auto;margin-right:0}.cover:before{content:'';position:absolute;inset:0 560px 0 0;background:radial-gradient(ellipse at 60% 50%,#3c1919,#100b09)}.cover h1{font-size:clamp(36px,6.7svh,61px)}}
+@media(max-height:650px){.cover-center{top:25%}.cover-horas{margin-bottom:11px}.cover h1{margin-top:9px}.cover-center .ornament{margin-top:8px}.cover-bottom{bottom:15%}.cover-bottom strong{margin-bottom:9px}.cover-bottom small{margin-top:8px}}
+@media(prefers-reduced-motion:reduce){.opening-transition{display:none!important}}
+
+/* Photo cover: keep the portrait unobstructed; live copy occupies the maroon base. */
+.cover-artwork{background-image:url('assets/cover-foto-clean-v1.png')}
+.cover-top{top:auto;bottom:3.8%;left:25%;width:50%;justify-content:center}
+.cover-top span:last-child{display:none}
+.cover-horas{position:absolute;top:calc(-.59 * 100svh);left:0;width:100%;font-size:clamp(12px,2.1svh,19px);margin:0;letter-spacing:6px}
+.cover-center{top:61%;left:15%;width:70%}
+.cover-center .eyebrow{font-family:var(--serif);font-size:clamp(8px,1.3svh,12px);letter-spacing:3px}
+.cover h1,.cover:where(*) h1{font-size:clamp(27px,5.1svh,46px);max-width:none;letter-spacing:-1.4px;margin:8px auto 0;line-height:1;color:#f7e4b6}
+.cover h1 [data-groom]{white-space:nowrap;font-size:.88em}
+.cover h1 em{font-size:clamp(26px,4.2svh,38px);margin:3px 0}
+.cover-center .ornament{display:none}
+.cover-bottom{bottom:9%;left:29%;width:42%}
+.cover-bottom>p{font-size:clamp(10px,1.3svh,12px)}
+.cover-bottom strong{font-size:clamp(12px,1.7svh,16px);margin:4px 0 13px}
+.cover-bottom .button{font-size:clamp(10px,1.4svh,13px);padding:8px;min-height:39px;letter-spacing:2px;gap:0}
+.cover-bottom .button span{display:none}
+.cover-bottom small{display:none}
+@media(max-height:650px){.cover-center{top:60%}.cover-bottom{bottom:8.5%}.cover-bottom strong{margin-bottom:8px}.cover h1{margin-top:6px}.cover-bottom .button{min-height:34px}}

@@ -1,0 +1,61 @@
+
+/* Editorial Batak */
+.hero{min-height:680px;height:100svh;border-top:3px solid #b48d52}
+.hero:before{content:none}
+.hero:after{background:linear-gradient(180deg,#170f0d50,transparent 28%,#21100f20 43%,#281012b8 67%,#260d10f5 88%,#260d10)}
+.hero-top{top:27px;left:32px;right:27px;align-items:center}
+.hero-top>span:first-child{font-size:10px;letter-spacing:4px;padding-bottom:8px;border-bottom:1px solid #c5a36999}
+.hero-top .monogram{font-size:27px}
+.hero-copy{left:36px;right:28px;bottom:198px;text-align:left;border-left:1px solid #c5a369aa;padding-left:18px}
+.hero-signature{display:flex;align-items:center;gap:12px;margin-bottom:15px}
+.hero-copy .ornament{width:83px;height:30px;margin:0;flex:0 0 83px;filter:drop-shadow(0 2px 4px #0006)}
+.hero-signature .eyebrow{font-size:8px;letter-spacing:2.4px;color:#e7ce9f}
+.hero-copy h2{font-size:clamp(36px,8.6vw,55px);line-height:1.04;letter-spacing:-1.1px;margin-top:0;color:#fff2da;text-shadow:0 2px 16px #19090955}
+.hero-copy h2 em{color:#d3ad6f}
+.hero-date{max-width:29ch;font-size:10px;line-height:1.8;letter-spacing:.4px;margin-top:16px;color:#ebd9bd}
+.hero-bottom{left:36px;right:84px;bottom:94px}
+.slider-row{justify-content:flex-start;gap:15px}
+.slider-row>span{width:auto;flex-shrink:0;font-size:9px}
+.slide-dots{max-width:132px;gap:7px}
+.slide-dots button{min-width:24px;height:32px;padding:14px 0}
+.slide-dots button:after{height:2px;border-radius:0}
+.slide-dots button.is-active:after{background:#d7b67c}
+.slider-row>button{width:34px;height:34px;flex-shrink:0}
+.scroll-cue{display:flex;align-items:center;gap:9px;text-align:left;font-size:7px;letter-spacing:1.6px;margin-top:9px}
+.scroll-cue span{font-size:22px}
+.hero>.ulos-band{height:15px;background-size:auto 22px}
+@media(min-width:1000px){.hero-copy h2{font-size:53px}}
+@media(max-width:380px){.hero-copy{left:27px;right:18px;padding-left:13px}.hero-copy h2{font-size:35px}.hero-signature{gap:7px}.hero-signature .eyebrow{font-size:7px;letter-spacing:1.7px}.hero-bottom{left:27px;right:74px}.slider-row{gap:10px}}
+@media(max-height:700px){.hero{min-height:600px}.hero-copy{bottom:185px}.hero-copy h2{font-size:38px}.hero-signature{margin-bottom:9px}.hero-date{margin-top:10px}}
+
+/* Closing: a translucent wine wash reveals the existing gorga artwork. */
+#penutup.closing {
+  background-color: #351014;
+  background-image:
+    linear-gradient(180deg, rgba(70,18,24,.88), rgba(83,20,27,.84) 48%, rgba(49,12,18,.94)),
+    var(--ulos);
+  background-position: center, center;
+  background-size: auto, auto 160px;
+  background-repeat: no-repeat, repeat;
+}
+#penutup .closing-copy {
+  position: relative;
+  padding: 20px 12px 16px;
+  margin: 12px -6px 0;
+  background: radial-gradient(ellipse at center, rgba(63,13,20,.90) 0%, rgba(76,17,24,.68) 65%, rgba(76,17,24,0) 100%);
+}
+#penutup .closing-copy h2 { color: #ffe8bc; }
+#penutup .closing-copy h3 { color: #fff0d3; line-height: 1.12; }
+#penutup .closing-copy h3 em { color: #e0ba7b; }
+#penutup .closing-copy > .eyebrow { color: #ecd2a5; }
+#penutup .closing-copy > p:last-child { color: #f1dfc8; line-height: 1.6; }
+#penutup .closing-copy h2,
+#penutup .closing-copy h3,
+#penutup .closing-copy p { text-shadow: 0 1px 3px #24070ccc; }
+#penutup .copyright {
+  color: #ead8c0;
+  border-top-color: #c5a36966;
+  padding: 14px 8px 6px;
+  margin-top: 12px;
+  background: linear-gradient(90deg, transparent, rgba(43,9,15,.65) 20%, rgba(43,9,15,.65) 80%, transparent);
+}
