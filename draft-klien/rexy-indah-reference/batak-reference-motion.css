@@ -30,3 +30,29 @@
   mask-size:100% 100%;-webkit-mask-size:100% 100%;
 }
 .batak-oval{left:8%;right:8%;top:9%;bottom:10%;border-radius:50%;border:1px solid #79110e;background:#f7e8d6}
+/* Wide oval: only its top and bottom arcs remain inside the viewport. */
+.batak-oval{
+  left:-38%;right:-38%;top:10%;bottom:10%;
+  border-radius:50%;border:1px solid #bd945d;
+  background:radial-gradient(ellipse at 50% 34%,#fff4df 0%,#f7e8d6 65%,#eddbbf 100%);
+  box-shadow:0 0 0 4px #6a25251a,0 0 0 5px #cba56b55,0 0 24px #c9a26a33,inset 0 0 30px #ad78451c;
+  overflow:hidden;
+}
+.batak-oval:before{
+  content:'';position:absolute;inset:8px;border:1px solid #cba56b44;border-radius:50%;pointer-events:none;
+}
+.batak-oval:after{
+  content:'';position:absolute;inset:-30%;background:linear-gradient(110deg,transparent 42%,#fff7 49%,transparent 56%);
+  transform:translateX(-65%);pointer-events:none;opacity:0;
+}
+.batak-playing .batak-oval{animation:wideOvalReveal 3.7s 5.2s cubic-bezier(.22,.75,.2,1) both}
+.batak-playing .batak-oval:after{animation:frameGlint 2.4s 8s both}
+.motion-text{transition:opacity 1.4s ease,transform 1.4s ease}
+@keyframes wideOvalReveal{
+  0%{opacity:0;transform:scale(.55,.04);filter:blur(8px)}
+  28%{opacity:1;filter:blur(2px)}
+  78%{transform:scale(1.015,1.015);filter:blur(0)}
+  100%{opacity:1;transform:scale(1);filter:blur(0)}
+}
+@keyframes frameGlint{0%{opacity:0;transform:translateX(-65%)}25%{opacity:.4}75%{opacity:.25}100%{opacity:0;transform:translateX(65%)}}
+@media(prefers-reduced-motion:reduce){.batak-oval{animation:none!important;opacity:1;transform:none;filter:none}.batak-oval:after{display:none}}
