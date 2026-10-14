@@ -20,22 +20,14 @@
   function revealMotionText(){$('.motion-text').classList.add('shown');}
   async function open(){
     if(opened)return;opened=true;$('#open').disabled=true;
-    const cover=$('#cover'),opening=$('#ulos-opening');
-    const finish=()=>{
-      opening.hidden=true;cover.hidden=true;
-      $('#contents').inert=false;document.body.classList.remove('locked');
-      $('#music').hidden=false;revealMotionText();startReveals();syncTimers();
-    };
-    $('#contents').hidden=false;$('#contents').inert=true;
-    if(reduced.matches||params.get('preview')==='1'){finish();return;}
-    opening.hidden=false;
-    requestAnimationFrame(()=>requestAnimationFrame(()=>opening.classList.add('visible')));
-    setTimeout(()=>{
-      cover.hidden=true;window.scrollTo(0,0);
-      opening.classList.add('unfold');
-    },450);
-    setTimeout(revealMotionText,1800);
-    setTimeout(finish,3200);
+    $('#contents').hidden=false;$('#music').hidden=false;
+    const cover=$('#cover');cover.style.position='absolute';cover.style.inset='0 0 auto';
+    requestAnimationFrame(()=>cover.classList.add('leaving'));
+    document.body.classList.remove('locked');window.scrollTo(0,0);startReveals();syncTimers();
+    setTimeout(()=>cover.hidden=true,reduced.matches?0:1300);
+    if(reduced.matches){video.hidden=true;revealMotionText();return;}
+    setTimeout(revealMotionText,3000);
+    try{await video.play();}catch{revealMotionText();}
   }
   video.addEventListener('error',revealMotionText);video.addEventListener('ended',revealMotionText);
   $('#open').addEventListener('click',open);
