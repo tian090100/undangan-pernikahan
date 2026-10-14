@@ -2,7 +2,7 @@
 /* Replace the video side foliage with moving woven ulos layers. */
 .motion{isolation:isolate}
 .ulos-sides{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
-.branch-mask{position:absolute;top:8%;bottom:17%;width:29%;background:#f7e8d6}
+.branch-mask{position:absolute;top:0;bottom:17%;width:29%;background:#f7e8d6}
 .branch-mask-left{left:0}.branch-mask-right{right:0}
 .ulos-cloth{position:absolute;top:8%;height:76%;width:38%;object-fit:fill;filter:drop-shadow(3px 5px 5px #39110d33);transform-origin:50% 0}
 .ulos-left{left:-1%;animation:ulosLeft 7s ease-in-out infinite}
@@ -11,3 +11,5 @@
 @keyframes ulosLeft{0%,100%{transform:rotate(-1.2deg) translateX(-2px)}50%{transform:rotate(1.2deg) translateX(3px)}}
 @keyframes ulosRight{0%,100%{transform:scaleX(-1) rotate(-1.2deg) translateX(-2px)}50%{transform:scaleX(-1) rotate(1.2deg) translateX(3px)}}
 @media(prefers-reduced-motion:reduce){.ulos-cloth{animation:none}}
+
+.ulos-sides:before{content:'';position:absolute;top:0;left:0;right:0;height:6%;z-index:2;background:#391014 url('../../assets/batak/gorga-border.png') center/auto 100% repeat-x;border-bottom:2px solid #6f1b1c}
