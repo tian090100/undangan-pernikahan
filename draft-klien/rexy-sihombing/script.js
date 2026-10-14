@@ -9,7 +9,7 @@
   if (guest) { $('#guest-name').textContent = guest; $('[name=name]').value = guest.slice(0, 60); }
   $$('[data-groom]').forEach(el => { el.textContent = config.groom; });
   $$('[data-bride]').forEach(el => { el.textContent = config.bride; });
-  document.title = `${config.groom} & ${config.bride} — DAPRITA Bespoke`;
+  document.title = `${config.groom} & ${config.bride} — DAPRITA · Undangan Custom`;
   if (config.familyGroom) $('#family-groom').textContent = config.familyGroom;
   if (config.familyBride) $('#family-bride').textContent = config.familyBride;
   if (config.verse) $('#verse-text').textContent = config.verse;
