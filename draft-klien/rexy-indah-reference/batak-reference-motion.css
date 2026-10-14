@@ -11,3 +11,10 @@
 @keyframes ulosFrameIn{from{opacity:0;transform:scale(1.06)}to{opacity:1;transform:scale(1)}}
 @keyframes ovalArrives{0%{opacity:0;transform:scale(.01)}15%{opacity:1}100%{opacity:1;transform:scale(1)}}
 @media(prefers-reduced-motion:reduce){.batak-art,.batak-final-frame,.batak-oval{animation:none!important;opacity:1;transform:none}}
+
+/* Retain the ulos sides and upper band; expose our illustration below the oval. */
+.batak-final-frame{
+  mask-image:linear-gradient(#000 0 77%,transparent 78%),linear-gradient(90deg,#000 0 14%,transparent 22% 78%,#000 86%);
+  -webkit-mask-image:linear-gradient(#000 0 77%,transparent 78%),linear-gradient(90deg,#000 0 14%,transparent 22% 78%,#000 86%);
+}
+.batak-oval{background:#f7e8d6}
