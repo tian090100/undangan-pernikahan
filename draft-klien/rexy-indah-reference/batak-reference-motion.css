@@ -104,3 +104,10 @@
   .motion-text>p{font-size:13px}
   .home-batak-mark{margin-top:20px}
 }
+/* Page two uses the current DAPRITA Batak ornament artwork. */
+#couple.scenery{
+  background-image:url('batak-ornaments-v1.png');
+  background-position:center;
+  background-size:cover;
+}
+#couple.scenery:before{display:none}
