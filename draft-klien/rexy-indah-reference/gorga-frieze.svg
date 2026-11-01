@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="96" viewBox="0 0 192 96">
+ <rect width="192" height="96" fill="#2b201e"/>
+ <path d="M0 4H192M0 92H192" stroke="#d8bc86" stroke-width="1"/>
+ <path d="M0 9H192M0 87H192" stroke="#a83d32" stroke-width="4"/>
+ <defs>
+  <g id="curl" fill="none" stroke-linejoin="round" stroke-linecap="round">
+   <path d="M0 76C25 76 44 65 51 44C59 18 91 19 93 40C95 60 69 66 64 51C61 42 70 36 76 42" stroke="#b84637" stroke-width="13"/>
+   <path d="M0 76C25 76 44 65 51 44C59 18 91 19 93 40C95 60 69 66 64 51C61 42 70 36 76 42" stroke="#f1e4ca" stroke-width="2.2"/>
+   <path d="M4 63C20 62 33 53 38 37C43 24 54 16 66 16" stroke="#b84637" stroke-width="5"/>
+   <path d="M5 63C20 62 33 53 38 37C43 24 54 16 66 16" stroke="#e6cfaa" stroke-width="1"/>
+   <path d="M17 72Q10 53 1 49Q18 47 26 64M42 59Q48 77 61 79Q42 84 34 69" fill="#b84637" stroke="#e6cfaa" stroke-width="1"/>
+  </g>
+ </defs>
+ <use href="#curl"/>
+ <use href="#curl" transform="translate(192 0) scale(-1 1)"/>
+ <path d="M96 14L103 23L96 32L89 23ZM96 70L103 79L96 88L89 79Z" fill="#b84637" stroke="#e6cfaa" stroke-width="1"/>
+</svg>

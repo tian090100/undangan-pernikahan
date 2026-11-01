@@ -1,0 +1,66 @@
+/* Refined ivory surfaces and a small, traditional woven border. */
+#contents .scenery{background:#faf3e7;background-image:linear-gradient(110deg,#ffffff55,transparent 60%);border-top:1px solid #bfa27755;padding-top:70px;padding-bottom:70px}
+#contents .scenery:after{content:'';position:absolute;top:0;left:0;right:0;height:16px;background:url('/assets/batak/gorga-border.png') center/auto 16px;pointer-events:none}
+#contents .glass,#contents .event{background:#fffaf2e8;border:1px solid #bfa27766;box-shadow:0 8px 28px #63352208;border-radius:120px 120px 12px 12px}
+.motion{background:#faf3e7}
+.batak-art{background:linear-gradient(140deg,#fffcf6,#f0e2ca);opacity:1}
+.batak-final-frame,.motion:after{display:none}
+.batak-oval{background:#fff9ef;border-color:#bda475;box-shadow:0 0 0 5px #bda47515}
+.motion:before{content:'';position:absolute;inset:0;z-index:3;pointer-events:none;border-top:18px solid transparent;border-bottom:18px solid transparent;border-image:url('/assets/batak/gorga-border.png') 18 repeat}
+.batak-playing .batak-oval{animation:quietReveal 1.8s .3s both}
+@keyframes quietReveal{from{opacity:0;transform:translateY(28px) scale(.97)}to{opacity:1;transform:none}}
+.gallery-heading,.registry-heading{font:36px/1.15 'Cormorant Garamond',Georgia,serif;margin:0 0 14px}
+.gallery-note,.registry-note{font:14px/1.7 Georgia,serif;color:#775b4e;max-width:320px;margin:0 auto 24px}
+.gallery-grid,.gift-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;text-align:left}
+.gallery-grid button{padding:0;border:0;border-radius:4px;overflow:hidden;background:#eadbc7;min-height:230px}
+.gallery-grid button:first-child{grid-column:1/-1;min-height:390px}
+.gallery-grid .photo{display:block;width:100%;height:100%;min-height:230px;background-size:auto 100%;transition:transform .5s}
+.gallery-grid button:first-child .photo{min-height:390px}
+.gallery-grid button:hover .photo{transform:scale(1.025)}
+.gift-card{padding:15px 12px;background:#fffaf3;border:1px solid #dac7aa;border-radius:8px;display:flex;flex-direction:column;gap:10px}
+.gift-card svg{display:block;width:100%;height:110px;stroke:#72362e;fill:#ede1cf;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.gift-card h3{font:23px Georgia,serif;margin:0}.gift-card small{font:12px/1.5 system-ui;color:#775b4e}
+.gift-card button{font:13px system-ui;letter-spacing:0;padding:12px 8px;margin-top:auto;min-height:44px}
+.gift-card button:disabled{opacity:.65;background:#d9cdbb;color:#604d42;cursor:default}
+.registry-status{font:14px/1.6 system-ui;min-height:24px}.registry-demo{display:inline-block;font:11px system-ui;letter-spacing:1px;border:1px solid #b99865;padding:6px 10px;margin-bottom:18px}
+.rexy-dialog{width:min(90vw,420px);max-height:90svh;overflow:auto;border:1px solid #b99865;border-radius:12px;background:#fff9ef;color:#70251f;padding:26px;box-sizing:border-box}
+.rexy-dialog::backdrop{background:#21100ed9}.rexy-dialog h2{font:30px Georgia,serif;margin:12px 0}.rexy-dialog p{font:14px/1.7 system-ui}.rexy-dialog button{min-height:44px}
+.rexy-dialog .dialog-close{display:block;margin-left:auto;padding:6px 12px;font:14px system-ui}.rexy-dialog label{display:block;font:14px/1.5 system-ui;text-align:left;margin:16px 0}
+.rexy-dialog input{display:block;box-sizing:border-box;width:100%;font:16px system-ui;margin-top:7px;padding:12px;border:1px solid #bfa277;border-radius:4px;background:#fff}
+.rexy-dialog .trap{display:none}.rexy-dialog .form-status{min-height:24px}.rexy-dialog .photo{height:60svh;background-size:auto 100%;border-radius:4px}.lightbox-controls{display:flex;align-items:center;justify-content:space-between;margin-top:16px}.lightbox-controls button{font-size:20px}
+@media(max-width:360px){.gift-grid{gap:8px}.gift-card{padding:12px 8px}.gift-card h3{font-size:20px}}
+@media(prefers-reduced-motion:reduce){.batak-playing .batak-oval{animation:none;opacity:1;transform:none}.gallery-grid .photo{transition:none}}
+
+/* Flat paired gorga linework: no rendered carving, shadows or bitmap texture. */
+#contents .scenery{background-color:#faf3e7;background-image:linear-gradient(#faf3e7c9,#faf3e7c9),url('gorga-linework.svg');background-size:auto,180px 180px;background-repeat:repeat}
+#contents .scenery:after{height:20px;background:#f1e1c8 url('gorga-linework.svg') center/90px 90px;border-bottom:1px solid #bda47555}
+.batak-art{background:#efdfc4 url('gorga-linework.svg') center/160px 160px}
+.batak-oval{background:#fff9eff5}
+.motion:before{inset:0;z-index:3;border:0;border-image:none;background:linear-gradient(90deg,#8b302b33,#b18a4d66,#8b302b33) top/100% 2px no-repeat,linear-gradient(90deg,#8b302b33,#b18a4d66,#8b302b33) bottom/100% 2px no-repeat}
+/* First interior page: stronger red, ivory and black gorga friezes. */
+#home .batak-art{background-color:#ead8b9;background-image:url('gorga-linework.svg');background-size:145px 145px}
+#home:before{inset:0;z-index:3;border:0;background:url('gorga-frieze.svg') center top/144px 72px repeat-x,url('gorga-frieze.svg') center bottom/144px 72px repeat-x;pointer-events:none}
+#home:after{display:block;content:'';position:absolute;inset:0;z-index:3;opacity:1;animation:none;transform:none;mask:none;-webkit-mask:none;background:linear-gradient(90deg,#2b201e 0 4px,#b84637 4px 7px,#ead9b9 7px 8px,transparent 8px calc(100% - 8px),#ead9b9 calc(100% - 8px) calc(100% - 7px),#b84637 calc(100% - 7px) calc(100% - 4px),#2b201e calc(100% - 4px));pointer-events:none}
+#home .batak-oval{top:12%;bottom:12%;background:#fff9effa;border-color:#b49a6d;box-shadow:0 0 0 4px #e1cfaa,0 0 0 5px #a5372b88}
+#home .motion-text{z-index:4}
+#home .next{bottom:79px;z-index:5}
+@media(max-height:600px){#home:before{background-size:120px 60px}#home .next{bottom:65px}}
+/* Remove the pale curved strip; frame the opening with flat ulos bands. */
+#home{background:#fff8ec}
+#home .batak-art{background:#fff8ec;animation:none;opacity:1;transform:none}
+#home .batak-oval{display:none}
+#home:before{background-color:transparent}
+#home:after{background:url('ulos-edge.svg') left top/22px 88px repeat-y,url('ulos-edge.svg') right top/22px 88px repeat-y;clip-path:inset(0);opacity:1}
+#home.batak-playing:before{animation:gorgaEnter 1.5s ease-out both}
+#home.batak-playing:after{animation:ulosUnfold 1.9s cubic-bezier(.2,.7,.2,1) both}
+#home .motion-text{left:37px;right:37px}
+#home .home-batak-mark{position:relative}
+#home .home-batak-mark:after{content:'';display:block;width:76px;height:5px;margin:21px auto 0;background:linear-gradient(90deg,#a7362b 0 33%,#30201e 33% 67%,#b59b6b 67%);transform:scaleX(0);transform-origin:center}
+#home.batak-playing .home-batak-mark:after{animation:batakDivider 1.2s 3.2s ease-out forwards}
+#home.batak-playing .home-batak-mark img{animation:houseBreathe 6s 4s ease-in-out infinite;filter:drop-shadow(0 5px 5px #6b31211a)}
+@keyframes gorgaEnter{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:none}}
+@keyframes ulosUnfold{from{clip-path:inset(0 0 100% 0)}to{clip-path:inset(0)}}
+@keyframes batakDivider{to{transform:scaleX(1)}}
+@keyframes houseBreathe{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@media(prefers-reduced-motion:reduce){#home.batak-playing:before,#home.batak-playing:after,#home.batak-playing .home-batak-mark img,#home.batak-playing .home-batak-mark:after{animation:none;transform:none;clip-path:none;opacity:1}}
+.gift-product-link{display:flex;align-items:center;min-height:44px;color:#772c24;font:12px/1.5 system-ui;text-underline-offset:3px}.gift-card h3{overflow-wrap:anywhere;line-height:1.25}.gift-link-note{display:flex;align-items:center;min-height:44px}.gift-card button{width:100%}

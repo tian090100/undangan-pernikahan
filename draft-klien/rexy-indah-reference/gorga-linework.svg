@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180">
+  <!-- Repeating flat linework inspired by the paired tendrils of Batak ornament. -->
+  <defs>
+    <g id="tendril" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M90 90C57 90 23 71 23 43C23 19 57 13 68 32C78 49 61 67 47 58C38 52 42 41 50 43" stroke="#8b302b" stroke-width="2.2" opacity=".38"/>
+      <path d="M88 83C60 81 32 66 32 43C32 27 54 23 61 36C67 46 58 56 50 51" stroke="#b18a4d" stroke-width="1" opacity=".5"/>
+      <path d="M32 73C14 68 5 55 0 45M31 70C29 82 16 91 0 90M63 23C71 13 82 7 90 0" stroke="#8b302b" stroke-width="1.4" opacity=".3"/>
+      <path d="M17 63L11 44L29 51ZM66 19L76 8L76 25Z" fill="#8b302b" stroke="none" opacity=".18"/>
+    </g>
+  </defs>
+  <use href="#tendril"/>
+  <use href="#tendril" transform="translate(180 0) scale(-1 1)"/>
+  <use href="#tendril" transform="translate(0 180) scale(1 -1)"/>
+  <use href="#tendril" transform="translate(180 180) scale(-1 -1)"/>
+  <path d="M90 76L104 90L90 104L76 90ZM90 84L96 90L90 96L84 90Z" fill="none" stroke="#8b302b" stroke-width="1.2" opacity=".45"/>
+</svg>
