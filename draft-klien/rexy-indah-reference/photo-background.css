@@ -1,0 +1,34 @@
+/* Couple-supplied photograph, positioned for portrait invitation screens. */
+.signature-cover .cover-artwork{
+ inset:0;width:100%;height:100%;
+ background-image:url('rexy-indah-background.jpg');
+ background-size:cover;background-position:53% 38%;
+ transform:scale(1.025);animation:suppliedPhotoDrift 18s ease-in-out infinite alternate;
+}
+.signature-cover:after{background:linear-gradient(180deg,#170f1733 0%,#170f170a 25%,#29131c55 48%,#290f1cdb 78%,#220e17f5 100%)}
+#home .batak-art{background-image:linear-gradient(180deg,#160e1233 0%,#1e111626 28%,#24121a9c 52%,#210d19ee 100%),url('rexy-indah-background.jpg');background-size:cover;background-position:53% 38%;background-repeat:no-repeat;opacity:1}
+#home .motion-text{top:auto;bottom:16%;transform:translateY(16px);left:35px;right:35px;color:#fff3df;text-shadow:0 2px 12px #1d0c16a8}
+#home .motion-text.shown{transform:none}
+#home .motion-text h2{color:#fff3df;font-size:clamp(34px,5.5svh,46px);margin:12px 0;line-height:1.05}
+#home .motion-text h2 span{color:#e7c99b}
+#home .motion-text>p{color:#f6e5c8;font-size:12px;letter-spacing:1.5px}
+#home .home-batak-mark{margin-top:18px}
+#home .home-batak-mark img{width:70px;height:82px;filter:drop-shadow(0 1px 2px #fff9);background:#fff5e9eb;border:1px solid #d6b988;border-radius:4px;padding:7px;box-sizing:content-box}
+#home .home-batak-mark:after{background:linear-gradient(90deg,#ba5140 0 33%,#f3e7d0 33% 67%,#c7a469 67%);margin-top:15px}
+#contents .scenery{
+ background-color:#f8efe2;
+ background-image:linear-gradient(#faf2e5ba,#faf2e5d4),url('rexy-indah-background.jpg');
+ background-size:cover;background-position:53% 38%;background-repeat:no-repeat;
+}
+#contents .glass,#contents .event{background:#fffaf2ed;box-shadow:0 7px 28px #29151118}
+#contents .events>.intro{background:#fffaf2df;padding:18px 15px;border-radius:8px}
+.gallery-heading,.registry-heading{color:#6f2924;text-shadow:0 1px 0 #fff9}
+.gallery-note,.registry-note{color:#513c31;background:#fffaf2d9;padding:12px 14px;border-radius:6px}
+@keyframes suppliedPhotoDrift{from{transform:scale(1.025)}to{transform:scale(1.065)}}
+@media(max-height:650px){#home .motion-text{bottom:15%}#home .motion-text h2{font-size:32px;margin:8px 0}#home .home-batak-mark{margin-top:12px}#home .home-batak-mark img{width:53px;height:62px;padding:5px}#home .motion-text>p{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.signature-cover .cover-artwork{animation:none;transform:none}#home .motion-text{transform:none}}
+
+/* Keep the opening control reachable on short phone and in-app browser screens. */
+.signature-cover{min-height:100svh;height:100svh}
+.signature-cover .cover-artwork{background-size:auto 112%;background-position:53% bottom}
+@media(max-height:650px){.signature-cover .cover-center{bottom:34%}.signature-cover h1{font-size:28px}.signature-cover .cover-bottom{bottom:7%}.signature-cover .cover-bottom strong{font-size:16px;margin-bottom:8px}.signature-cover .cover-bottom button{min-height:40px}.signature-cover .cover-top{bottom:2%}#home .motion-text.shown{transform:scale(.86);transform-origin:center bottom}}
