@@ -11,10 +11,9 @@
   const video = {hidden:false,pause(){},play(){ document.querySelector('.motion').classList.add('batak-playing'); return Promise.resolve(); },addEventListener(){}};
   const observer = 'IntersectionObserver' in window ? new IntersectionObserver(entries => entries.forEach(entry => {if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}}),{threshold:.12}) : null;
   function startReveals(){if(observer){document.body.classList.add('animated');$$('.reveal').forEach(el => observer.observe(el));}}
-  function showPhoto(index){photo=(index+3)%3;$$('.slide').forEach((el,i)=>el.classList.toggle('active',i===photo));$$('[data-photo]').forEach((el,i)=>{el.classList.toggle('active',i===photo);el.setAttribute('aria-pressed',String(i===photo));});}
+  function showPhoto(index){photo=(index+3)%3;$$('.slide').forEach((el,i)=>el.classList.toggle('active',i===photo));}
   function showStory(index){story=(index+3)%3;$$('.story-slide').forEach((el,i)=>el.classList.toggle('active',i===story));$('#story-count').textContent=`${story+1} / 3`;}
   function syncTimers(){clearInterval(photoTimer);clearInterval(storyTimer);if(opened&&!document.hidden&&!reduced.matches){photoTimer=setInterval(()=>showPhoto(photo+1),5000);storyTimer=setInterval(()=>showStory(story+1),6500);}}
-  $$('[data-photo]').forEach(el=>el.addEventListener('click',()=>{showPhoto(Number(el.dataset.photo));syncTimers();}));
   $('#story-prev').addEventListener('click',()=>{showStory(story-1);syncTimers();});
   $('#story-next').addEventListener('click',()=>{showStory(story+1);syncTimers();});
   function revealMotionText(){$('.motion-text').classList.add('shown');}
