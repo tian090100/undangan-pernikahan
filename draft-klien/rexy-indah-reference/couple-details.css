@@ -1,0 +1,31 @@
+/* Real photographs supplied by Rexy and Indah. */
+.signature-cover .cover-artwork{background-image:url('photos/rexy-indah-01.jpg');background-size:cover;background-position:50% 28%}
+#home .batak-art{background-image:linear-gradient(#170d0c26,#190d1059),url('photos/rexy-indah-02.jpg');background-position:center;background-size:cover}
+#contents:before{background-image:url('photos/rexy-indah-09.jpg');background-position:50% 40%}
+.photo.p1{background-image:url('photos/rexy-indah-02.jpg')}
+.photo.p2{background-image:url('photos/rexy-indah-01.jpg')}
+.photo.p3{background-image:url('photos/rexy-indah-05.jpg')}
+.photo.p1,.photo.p2,.photo.p3{background-size:cover;background-position:50% 40%}
+.portrait.groom,.portrait.bride{background-image:url('photos/rexy-indah-01.jpg');background-size:auto 110%;background-position:28% 30%}
+.portrait.bride{background-position:82% 30%}
+.person h4{font-size:clamp(18px,4.8vw,22px);line-height:1.4;overflow-wrap:break-word}
+.person p{line-height:1.9}
+.instagram{display:inline-block;margin-top:12px;color:#842b27;text-underline-offset:4px;font-size:13px}
+.detail-button{display:inline-block;padding:11px 20px;margin-top:20px;border-radius:25px;background:#79110e;color:#fffaf2;text-decoration:none;font-size:13px;min-height:44px}
+.countdown{margin-top:24px}
+.gallery-grid img{display:block;width:100%;height:260px;object-fit:cover;transition:transform .5s}
+.gallery-grid button:first-child img{height:480px}
+.gallery-grid button:hover img{transform:scale(1.025)}
+.rexy-dialog.gallery-lightbox{padding:16px;width:min(94vw,680px)}
+.gallery-lightbox img{display:block;width:100%;height:65svh;object-fit:contain;margin-top:12px;background:#211714}
+@media(max-width:360px){.gallery-grid img{height:220px}.gallery-grid button:first-child img{height:400px}}
+@media(prefers-reduced-motion:reduce){.gallery-grid img{transition:none}}
+
+/* Keep the cover copy clear of faces, including short mobile viewports. */
+.signature-cover .cover-artwork{background-position:50% 100%}
+.portrait.groom{background-image:url('photos/rexy-portrait.jpg');background-size:cover;background-position:center}
+.portrait.bride{background-image:url('photos/indah-portrait.jpg');background-size:cover;background-position:center}
+
+/* Curving red-and-white gorga border based on the supplied ornament reference. */
+#contents .scenery:after{height:36px;background:#171515 url('gorga-sulur-divider.svg') center/144px 36px repeat-x;border:0;box-shadow:0 1px 0 #f3e5cd66,0 3px 8px #190d1026}
+

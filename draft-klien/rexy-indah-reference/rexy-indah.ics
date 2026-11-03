@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//DAPRITA//Rexy Indah Wedding//ID
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rexy-indah-pemberkatan-20261121@daprita.web.id
+DTSTAMP:20261103T000000Z
+DTSTART:20261121T020000Z
+DTEND:20261121T040000Z
+SUMMARY:Pemberkatan Rexy & Indah
+LOCATION:Gereja Katolik Stasi St. Yosef\, Mandau
+DESCRIPTION:Jl. Mandau KM 40\, Desa Danau Lancang\, Tapung Hulu\, Kampar\, 
+ Riau.
+END:VEVENT
+BEGIN:VEVENT
+UID:rexy-indah-resepsi-20261121@daprita.web.id
+DTSTAMP:20261103T000000Z
+DTSTART:20261121T040000Z
+SUMMARY:Resepsi dan Adat Rexy & Indah
+LOCATION:Rumah Mempelai Pria
+DESCRIPTION:Mulai 11.00 WIB sampai selesai. Jl. Mandau KM 40\, Desa Danau L
+ ancang\, Tapung Hulu\, Kampar\, Riau.
+END:VEVENT
+END:VCALENDAR

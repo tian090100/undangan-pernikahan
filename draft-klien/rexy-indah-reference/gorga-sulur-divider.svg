@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="48" viewBox="0 0 192 48">
+  <title>Lis sulur gorga, digambar mengikuti referensi pasangan</title>
+  <rect width="192" height="48" fill="#171515"/>
+  <path d="M0 2H192M0 46H192" stroke="#f4eee3" stroke-width="1.4"/>
+  <path d="M0 5H192M0 43H192" stroke="#bd292b" stroke-width="2"/>
+  <defs>
+    <g id="sulur">
+      <!-- White contour and red vine, with inward hooks. -->
+      <path d="M-8 33C9 35 16 31 23 22C31 11 42 8 51 13C61 19 54 30 46 26C39 23 43 17 47 19" fill="none" stroke="#f4eee3" stroke-width="7" stroke-linecap="round"/>
+      <path d="M-8 33C9 35 16 31 23 22C31 11 42 8 51 13C61 19 54 30 46 26C39 23 43 17 47 19" fill="none" stroke="#bc292b" stroke-width="4.4" stroke-linecap="round"/>
+      <!-- Sharp, returning leaf tips follow the reference's carved silhouette. -->
+      <path d="M22 24C15 24 10 19 11 13C15 17 19 17 22 16C18 12 20 9 25 6C24 12 29 13 33 13C31 17 27 21 22 24Z" fill="#bc292b" stroke="#f4eee3" stroke-width="1.1" stroke-linejoin="round"/>
+      <path d="M54 16C61 10 65 10 70 12C66 13 64 17 65 20C71 17 77 18 82 22C74 21 72 24 69 28C65 33 59 33 55 31C61 29 62 25 60 22C58 19 56 18 54 16Z" fill="#bc292b" stroke="#f4eee3" stroke-width="1.1" stroke-linejoin="round"/>
+      <path d="M24 21C27 16 29 15 32 14M58 18C62 21 64 24 62 28" fill="none" stroke="#f4eee3" stroke-width=".8"/>
+    </g>
+  </defs>
+  <use href="#sulur"/>
+  <use href="#sulur" transform="translate(96 48) scale(1 -1)"/>
+  <path d="M73 32C80 35 88 35 96 33M169 16C177 13 184 13 192 15" fill="none" stroke="#f4eee3" stroke-width="5.8"/>
+  <path d="M73 32C80 35 88 35 96 33M169 16C177 13 184 13 192 15" fill="none" stroke="#bc292b" stroke-width="3.4"/>
+</svg>

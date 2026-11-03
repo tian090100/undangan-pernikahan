@@ -40,5 +40,10 @@
   document.addEventListener('visibilitychange',()=>{syncTimers();if(document.hidden){video.pause();if(audioContext)audioContext.suspend();playing=false;$('#music').setAttribute('aria-pressed','false');}});
   reduced.addEventListener('change',syncTimers);
   window.addEventListener('pagehide',()=>{clearInterval(photoTimer);clearInterval(storyTimer);video.pause();if(audioContext)audioContext.suspend();});
+  // The form leaves the countdown choice blank; use the first ceremony (WIB).
+  const ceremonyTime=Date.parse('2026-11-21T09:00:00+07:00');
+  function updateCountdown(){const remaining=Math.max(0,Math.floor((ceremonyTime-Date.now())/1000));const values=[Math.floor(remaining/86400),Math.floor(remaining/3600)%24,Math.floor(remaining/60)%60,remaining%60];$$('.countdown b').forEach((el,i)=>el.textContent=String(values[i]).padStart(2,'0'));}
+  updateCountdown();const countdownTimer=setInterval(updateCountdown,1000);
+  window.addEventListener('pagehide',()=>clearInterval(countdownTimer));
   if(params.get('preview')==='1')open();
 })();
