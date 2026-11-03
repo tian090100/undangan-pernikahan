@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="450" height="132" viewBox="0 0 450 132">
+ <defs>
+  <g id="panel" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path d="M14 44C34 8 81 16 75 38C70 56 44 53 45 38C45 29 59 28 60 36C61 42 53 43 52 38M18 62C49 77 66 56 88 42S131 17 158 34S181 58 198 43" stroke="#dfd0b9" stroke-width="1.8"/>
+   <path d="M15 40C38 8 88 11 86 38C85 64 45 67 35 47M24 66C47 80 75 63 92 51S129 30 150 41S183 71 204 50" stroke="#b5302d" stroke-width="4"/>
+   <path d="M96 17C100 31 115 35 127 24C122 28 113 23 115 18C119 22 124 19 128 15M142 61C153 47 170 50 175 62C168 56 163 59 162 65C157 60 150 62 145 68" fill="#b5302d" stroke="#dfd0b9" stroke-width="1.1"/>
+   <path d="M14 24C39 4 64 8 82 17M14 77C46 89 67 76 89 64M89 12C126 6 163 10 197 24M93 74C137 57 163 83 195 66" stroke="#b5302d" stroke-width="1.1"/>
+   <path d="M93 36L102 31L115 36L102 41ZM146 28L157 23L172 28L157 32Z" stroke="#dfd0b9" stroke-width="1"/>
+  </g>
+
+ </defs>
+ <path d="M1 3H449V81C362 91 293 70 225 82C157 70 88 91 1 81Z" fill="#080808" stroke="#ac302c" stroke-width="3"/>
+ <path d="M6 9H444V76C356 85 294 64 225 76C156 64 94 85 6 76Z" fill="none" stroke="#e9ddc9" stroke-width=".8"/>
+ <use href="#panel" transform="translate(8 8) scale(.49 .38)"/>
+ <use href="#panel" transform="translate(106 10) scale(.49 .38)"/>
+ <use href="#panel" transform="translate(8 76) scale(.49 -.38)"/>
+ <use href="#panel" transform="translate(106 76) scale(.49 -.38)"/>
+ <g transform="translate(450 0) scale(-1 1)">
+  <use href="#panel" transform="translate(8 8) scale(.49 .38)"/>
+  <use href="#panel" transform="translate(106 10) scale(.49 .38)"/>
+  <use href="#panel" transform="translate(8 76) scale(.49 -.38)"/>
+  <use href="#panel" transform="translate(106 76) scale(.49 -.38)"/>
+ </g>
+</svg>

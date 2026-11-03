@@ -27,5 +27,5 @@
 .portrait.bride{background-image:url('photos/indah-portrait.jpg');background-size:cover;background-position:center}
 
 /* Curving red-and-white gorga border based on the supplied ornament reference. */
-#contents .scenery:after{height:36px;background:#171515 url('gorga-sulur-divider.svg') center/144px 36px repeat-x;border:0;box-shadow:0 1px 0 #f3e5cd66,0 3px 8px #190d1026}
+#contents .scenery:after{height:18px;background:#171515 url('gorga-sulur-divider.svg') center/72px 18px repeat-x;border:0;box-shadow:0 1px 0 #f3e5cd66,0 3px 8px #190d1026}
 

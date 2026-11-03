@@ -1,0 +1,55 @@
+
+/* First interior page: a carved-panel composition using the approved gorga. */
+#home{--frame-ink:#201715;--frame-red:#a4312c;--frame-ivory:#e7d4b9;isolation:isolate}
+#home:before{
+ inset:0;z-index:3;border:0;
+ background:
+   url('gorga-sulur-divider.svg') center 7px/168px 42px repeat-x,
+   url('gorga-sulur-divider.svg') center calc(100% - 7px)/168px 42px repeat-x,
+   linear-gradient(var(--frame-ink),var(--frame-ink)) top/100% 56px no-repeat,
+   linear-gradient(var(--frame-ink),var(--frame-ink)) bottom/100% 56px no-repeat;
+ box-shadow:inset 0 1px var(--frame-ivory),inset 0 -1px var(--frame-ivory);
+}
+#home:after{
+ inset:0;z-index:3;
+ background:
+   url('gorga-sulur-edge.svg') 2px center/16px 64px repeat-y,
+   url('gorga-sulur-edge.svg') calc(100% - 2px) center/16px 64px repeat-y,
+   linear-gradient(90deg,var(--frame-ink) 0 20px,transparent 20px calc(100% - 20px),var(--frame-ink) calc(100% - 20px));
+ box-shadow:inset 2px 0 var(--frame-red),inset -2px 0 var(--frame-red);
+}
+#home .batak-art{inset:50px 18px;box-shadow:inset 0 0 0 1px #e7d4b98c;background-position:50% 48%}
+#home .batak-final-frame{
+ display:block;position:absolute;inset:59px 27px;z-index:3;pointer-events:none;
+ background:none;border:1px solid #e7d4b959;box-shadow:0 0 0 3px #20171530;
+ clip-path:polygon(0 0,16% 0,16% 1px,84% 1px,84% 0,100% 0,100% 100%,84% 100%,84% calc(100% - 1px),16% calc(100% - 1px),16% 100%,0 100%);
+}
+#home .home-batak-mark img{background:#f4e9d5d9;border-color:#a4312c;border-radius:0;box-shadow:0 0 0 3px #20171588}
+#home .home-batak-mark:after{height:2px;background:#d5b78a;width:48px}
+@media(max-height:650px){#home:before{background-size:144px 36px,144px 36px,100% 50px,100% 50px}#home .batak-art{inset:44px 18px}#home .batak-final-frame{inset:53px 27px}}
+
+#home.motion{height:100svh;min-height:100svh}
+
+/* Wide gorga panel and a central symmetrical crest, inspired by the supplied reference. */
+#home:before{background:url('gorga-crown.svg') center top/100% auto no-repeat,url('gorga-sulur-divider.svg') center calc(100% - 5px)/112px 28px repeat-x,linear-gradient(var(--frame-ink),var(--frame-ink)) bottom/100% 38px no-repeat;box-shadow:none}
+#home .batak-art{inset:48px 18px 33px}
+#home .batak-final-frame{inset:84px 27px 42px;border-top:0;clip-path:none}
+@media(max-height:650px){#home:before{background-size:100% auto,96px 24px,100% 34px}#home .batak-art{inset:43px 18px 29px}#home .batak-final-frame{inset:80px 27px 38px}}
+
+/* The central ornament is the exact image selected by the couple. */
+#home .home-gorga-crest{position:absolute;top:0;left:50%;width:clamp(92px,28%,126px);aspect-ratio:1;transform:translateX(-50%);z-index:4;pointer-events:none;mix-blend-mode:normal}
+#home .home-gorga-crest img{display:block;width:100%;height:100%;object-fit:contain}
+#home.batak-playing .home-gorga-crest{animation:crestReveal 1.5s ease-out both}
+@keyframes crestReveal{from{opacity:0;transform:translate(-50%,-10px)}to{opacity:1;transform:translate(-50%,0)}}
+@media(prefers-reduced-motion:reduce){#home.batak-playing .home-gorga-crest{animation:none}}
+
+#home .home-gorga-crest{background:transparent;clip-path:polygon(50% 3%,55% 5%,58% 9%,62% 7%,67% 9%,70% 14%,70% 19%,76% 23%,83% 31%,87% 40%,89% 49%,87% 55%,84% 58%,87% 63%,86% 70%,81% 77%,75% 82%,70% 88%,61% 93%,53% 97%,48% 97%,39% 94%,31% 89%,25% 83%,19% 79%,15% 72%,13% 65%,15% 58%,12% 54%,11% 47%,13% 39%,17% 32%,23% 25%,30% 19%,30% 14%,34% 9%,39% 8%,42% 10%,46% 5%)}
+
+
+/* Keep the names below the faces, above the bottom gorga band. */
+#home .motion-text{bottom:clamp(48px,9svh,78px);left:25px;right:25px}
+#home .motion-text h2{font-size:clamp(30px,5.2svh,46px);line-height:1.05;margin:7px 0}
+#home .motion-text h2 br{display:none}
+#home .motion-text h2 span{font-size:.65em;margin:0 .22em}
+#home .motion-text.shown{transform:none}
+#home .batak-art{background-image:linear-gradient(180deg,#170d0c15 45%,#190d10a8 83%,#190d10df),url('photos/rexy-indah-02.jpg')}
