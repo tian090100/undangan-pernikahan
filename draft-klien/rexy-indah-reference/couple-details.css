@@ -29,3 +29,98 @@
 /* Curving red-and-white gorga border based on the supplied ornament reference. */
 #contents .scenery:after{height:18px;background:#171515 url('gorga-sulur-divider.svg') center/72px 18px repeat-x;border:0;box-shadow:0 1px 0 #f3e5cd66,0 3px 8px #190d1026}
 
+
+.gift-catalog-dialog {
+  max-height: min(88vh, 88dvh);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.gift-catalog-header {
+  position: sticky;
+  top: -26px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff9ef;
+}
+
+.bank-disclosure summary {
+  cursor: pointer;
+  list-style: none;
+  margin-top: 0;
+}
+.bank-disclosure summary::-webkit-details-marker { display: none; }
+.bank-disclosure:not([open]) .bank-hide,
+.bank-disclosure[open] .bank-show { display: none; }
+.bank-pending { margin-top: 16px; }
+
+
+#gift .bank-disclosure { margin-top: 12px; }
+#gift #physical-gifts { margin-top: 0; }
+
+
+.bank-card-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+  text-align: left;
+}
+.bank-preview-card {
+  padding: 24px 16px 16px;
+  border: 1px solid #c38c68;
+  border-radius: 12px;
+  color: #fff1dc;
+  background: url('gorga-sulur-divider.svg') center top / auto 12px repeat-x,
+    linear-gradient(135deg, #63201d, #321a19);
+  box-shadow: 0 5px 14px #321a1926;
+}
+.bank-preview-card-bride {
+  background: url('gorga-sulur-divider.svg') center top / auto 12px repeat-x,
+    linear-gradient(135deg, #47302b, #241918);
+}
+.bank-card-label {
+  color: #f0cfa9;
+  font: 600 10px/1.5 system-ui, sans-serif;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.bank-preview-card h3 { margin: 5px 0 8px; font-size: 19px; }
+.bank-card-number {
+  font: 600 clamp(16px, 4.5vw, 21px)/1.4 system-ui, sans-serif;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: .07em;
+}
+
+/* Let the two introductions sit directly on the photograph. */
+#contents .events > .intro,
+#contents .gallery > .gallery-note {
+  position: relative;
+  isolation: isolate;
+  max-width: 34ch;
+  margin: 0 auto 26px;
+  padding: 8px 4px 14px;
+  background: none;
+  color: #fff5e6;
+  font-size: 15px;
+  line-height: 1.65;
+  text-shadow: 0 1px 4px #201715, 0 2px 12px #201715;
+}
+#contents .events > .intro::before,
+#contents .gallery > .gallery-note::before {
+  content: '';
+  position: absolute;
+  inset: -24px -18px;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(ellipse, #211614e8 24%, #211614a0 58%, transparent 76%);
+}
+#contents .events > .intro::after,
+#contents .gallery > .gallery-note::after {
+  content: '';
+  display: block;
+  width: 44px;
+  height: 1px;
+  margin: 12px auto 0;
+  background: #d6bc98;
+}

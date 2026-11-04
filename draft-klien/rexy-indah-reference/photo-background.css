@@ -45,3 +45,16 @@
 #contents .registry-demo{background:#fffaf2e8}
 #contents .registry-status{background:#fffaf2e8;padding:10px;border-radius:6px}
 @media(prefers-reduced-transparency:reduce){#contents .glass,#contents .event{background:#fffaf2f5}}
+/* The SVG bottom edge is 14px plus 2.5% of the inset frame height. */
+.signature-cover {
+  --cover-credit-bottom: calc(22px + (100svh - 28px) * .025);
+}
+.signature-cover .cover-top {
+  bottom: var(--cover-credit-bottom);
+  left: 12%;
+  width: 76%;
+  line-height: 1.4;
+}
+.signature-cover .cover-bottom {
+  bottom: max(10%, calc(var(--cover-credit-bottom) + 22px));
+}

@@ -35,7 +35,6 @@
     if(playing){await audioContext.suspend();playing=false;}else{await audioContext.resume();playing=true;}
     $('#music').setAttribute('aria-pressed',String(playing));$('#music').setAttribute('aria-label',playing?'Jeda musik ilustrasi':'Putar musik ilustrasi');
   });
-  $('#rsvp-form').addEventListener('submit',event=>{event.preventDefault();$('#rsvp-status').textContent='Pratinjau: konfirmasi hanya tampil di tab ini dan belum dikirim online.';});
   $('#wish-form').addEventListener('submit',event=>{event.preventDefault();const data=new FormData(event.target);const entry=document.createElement('article'),name=document.createElement('b'),message=document.createElement('p');name.textContent=String(data.get('name')).slice(0,60);message.textContent=String(data.get('message')).slice(0,500);entry.append(name,message);$('#wish-list').prepend(entry);event.target.elements.message.value='';$('#wish-status').textContent='Pratinjau: ucapan tampil di tab ini saja; hilang setelah reload.';});
   document.addEventListener('visibilitychange',()=>{syncTimers();if(document.hidden){video.pause();if(audioContext)audioContext.suspend();playing=false;$('#music').setAttribute('aria-pressed','false');}});
   reduced.addEventListener('change',syncTimers);
