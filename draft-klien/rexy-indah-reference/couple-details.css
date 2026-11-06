@@ -124,3 +124,14 @@
   margin: 12px auto 0;
   background: #d6bc98;
 }
+
+#gift #physical-gifts { margin-top: 24px; }
+#physical-gift-list { margin-top: 24px; text-align: left; }
+#physical-gift-list > h3 { font-size: 24px; margin-bottom: 12px; }
+#physical-gift-list > p { font-size: 13px; line-height: 1.6; margin-bottom: 18px; }
+
+.closing .closing-photo {
+  background-image: url('photos/rexy-indah-casual-03.jpg');
+  background-size: cover;
+  background-position: center 40%;
+}
