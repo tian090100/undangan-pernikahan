@@ -25,7 +25,7 @@
     document.body.classList.remove('locked');window.scrollTo(0,0);startReveals();syncTimers();
     setTimeout(()=>cover.hidden=true,reduced.matches?0:1300);
     if(reduced.matches){video.hidden=true;revealMotionText();return;}
-    setTimeout(revealMotionText,3000);
+    setTimeout(revealMotionText,800);
     try{await video.play();}catch{revealMotionText();}
   }
   video.addEventListener('error',revealMotionText);video.addEventListener('ended',revealMotionText);
