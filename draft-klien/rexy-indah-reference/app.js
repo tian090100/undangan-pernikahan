@@ -7,7 +7,9 @@
   $('#guest').textContent = guest;
   $$('input[name=name]').forEach(el => el.value = guest === 'Tamu Undangan' ? '' : guest.slice(0,60));
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-  let opened = false, photo = 0, story = 0, photoTimer, storyTimer, audioContext, playing = false;
+  let opened = false, photo = 0, story = 0, photoTimer, storyTimer;
+  const musicButton = $('#music');
+  const soundtrack = $('#soundtrack');
   const video = {hidden:false,pause(){},play(){ document.querySelector('.motion').classList.add('batak-playing'); return Promise.resolve(); },addEventListener(){}};
   const observer = 'IntersectionObserver' in window ? new IntersectionObserver(entries => entries.forEach(entry => {if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}}),{threshold:.12}) : null;
   function startReveals(){if(observer){document.body.classList.add('animated');$$('.reveal').forEach(el => observer.observe(el));}}
@@ -19,7 +21,8 @@
   function revealMotionText(){$('.motion-text').classList.add('shown');}
   async function open(){
     if(opened)return;opened=true;$('#open').disabled=true;
-    $('#contents').hidden=false;$('#music').hidden=false;
+    $('#contents').hidden=false;musicButton.hidden=false;
+    if(params.get('preview')!=='1') playSoundtrack();
     const cover=$('#cover');cover.style.position='absolute';cover.style.inset='0 0 auto';
     requestAnimationFrame(()=>cover.classList.add('leaving'));
     document.body.classList.remove('locked');window.scrollTo(0,0);startReveals();syncTimers();
@@ -30,15 +33,25 @@
   }
   video.addEventListener('error',revealMotionText);video.addEventListener('ended',revealMotionText);
   $('#open').addEventListener('click',open);
-  $('#music').addEventListener('click',async()=>{
-    if(!audioContext){audioContext=new (window.AudioContext||window.webkitAudioContext)();const gain=audioContext.createGain();gain.gain.value=.025;gain.connect(audioContext.destination);[130.81,164.81,196].forEach(freq=>{const oscillator=audioContext.createOscillator();oscillator.type='sine';oscillator.frequency.value=freq;oscillator.connect(gain);oscillator.start();});}
-    if(playing){await audioContext.suspend();playing=false;}else{await audioContext.resume();playing=true;}
-    $('#music').setAttribute('aria-pressed',String(playing));$('#music').setAttribute('aria-label',playing?'Jeda musik ilustrasi':'Putar musik ilustrasi');
+  function playSoundtrack(){
+    soundtrack.play().catch(syncMusicButton);
+  }
+  function syncMusicButton(){
+    const playing = !soundtrack.paused && !soundtrack.error;
+    musicButton.setAttribute('aria-pressed', String(playing));
+    musicButton.setAttribute('aria-label', playing ? 'Jeda Horbo Paung' : 'Putar Horbo Paung');
+  }
+  for(const event of ['playing', 'pause', 'error']){
+    soundtrack.addEventListener(event, syncMusicButton);
+  }
+  musicButton.addEventListener('click', ()=>{
+    if(soundtrack.paused) playSoundtrack();
+    else soundtrack.pause();
   });
   $('#wish-form').addEventListener('submit',event=>{event.preventDefault();const data=new FormData(event.target);const entry=document.createElement('article'),name=document.createElement('b'),message=document.createElement('p');name.textContent=String(data.get('name')).slice(0,60);message.textContent=String(data.get('message')).slice(0,500);entry.append(name,message);$('#wish-list').prepend(entry);event.target.elements.message.value='';$('#wish-status').textContent='Pratinjau: ucapan tampil di tab ini saja; hilang setelah reload.';});
-  document.addEventListener('visibilitychange',()=>{syncTimers();if(document.hidden){video.pause();if(audioContext)audioContext.suspend();playing=false;$('#music').setAttribute('aria-pressed','false');}});
+  document.addEventListener('visibilitychange',()=>{syncTimers();if(document.hidden){video.pause();soundtrack.pause();}});
   reduced.addEventListener('change',syncTimers);
-  window.addEventListener('pagehide',()=>{clearInterval(photoTimer);clearInterval(storyTimer);video.pause();if(audioContext)audioContext.suspend();});
+  window.addEventListener('pagehide',()=>{clearInterval(photoTimer);clearInterval(storyTimer);video.pause();soundtrack.pause();});
   // The form leaves the countdown choice blank; use the first ceremony (WIB).
   const ceremonyTime=Date.parse('2026-11-21T09:00:00+07:00');
   function updateCountdown(){const remaining=Math.max(0,Math.floor((ceremonyTime-Date.now())/1000));const values=[Math.floor(remaining/86400),Math.floor(remaining/3600)%24,Math.floor(remaining/60)%60,remaining%60];$$('.countdown b').forEach((el,i)=>el.textContent=String(values[i]).padStart(2,'0'));}
