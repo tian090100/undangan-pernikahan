@@ -7,7 +7,7 @@
   $('#guest').textContent = guest;
   $$('input[name=name]').forEach(el => el.value = guest === 'Tamu Undangan' ? '' : guest.slice(0,60));
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-  let opened = false, photo = 0, story = 0, photoTimer, storyTimer;
+  let opened = false, photo = 0, story = 0, photoTimer;
   const musicButton = $('#music');
   const soundtrack = $('#soundtrack');
   const video = {hidden:false,pause(){},play(){ document.querySelector('.motion').classList.add('batak-playing'); return Promise.resolve(); },addEventListener(){}};
@@ -15,7 +15,7 @@
   function startReveals(){if(observer){document.body.classList.add('animated');$$('.reveal').forEach(el => observer.observe(el));}}
   function showPhoto(index){photo=(index+3)%3;$$('.slide').forEach((el,i)=>el.classList.toggle('active',i===photo));}
   function showStory(index){story=(index+3)%3;$$('.story-slide').forEach((el,i)=>el.classList.toggle('active',i===story));$('#story-count').textContent=`${story+1} / 3`;}
-  function syncTimers(){clearInterval(photoTimer);clearInterval(storyTimer);if(opened&&!document.hidden&&!reduced.matches){photoTimer=setInterval(()=>showPhoto(photo+1),5000);storyTimer=setInterval(()=>showStory(story+1),6500);}}
+  function syncTimers(){clearInterval(photoTimer);if(opened&&!document.hidden&&!reduced.matches){photoTimer=setInterval(()=>showPhoto(photo+1),5000);}}
   $('#story-prev').addEventListener('click',()=>{showStory(story-1);syncTimers();});
   $('#story-next').addEventListener('click',()=>{showStory(story+1);syncTimers();});
   function revealMotionText(){$('.motion-text').classList.add('shown');}
@@ -51,7 +51,7 @@
   $('#wish-form').addEventListener('submit',event=>{event.preventDefault();const data=new FormData(event.target);const entry=document.createElement('article'),name=document.createElement('b'),message=document.createElement('p');name.textContent=String(data.get('name')).slice(0,60);message.textContent=String(data.get('message')).slice(0,500);entry.append(name,message);$('#wish-list').prepend(entry);event.target.elements.message.value='';$('#wish-status').textContent='Pratinjau: ucapan tampil di tab ini saja; hilang setelah reload.';});
   document.addEventListener('visibilitychange',()=>{syncTimers();if(document.hidden){video.pause();soundtrack.pause();}});
   reduced.addEventListener('change',syncTimers);
-  window.addEventListener('pagehide',()=>{clearInterval(photoTimer);clearInterval(storyTimer);video.pause();soundtrack.pause();});
+  window.addEventListener('pagehide',()=>{clearInterval(photoTimer);video.pause();soundtrack.pause();});
   // The form leaves the countdown choice blank; use the first ceremony (WIB).
   const ceremonyTime=Date.parse('2026-11-21T09:00:00+07:00');
   function updateCountdown(){const remaining=Math.max(0,Math.floor((ceremonyTime-Date.now())/1000));const values=[Math.floor(remaining/86400),Math.floor(remaining/3600)%24,Math.floor(remaining/60)%60,remaining%60];$$('.countdown b').forEach((el,i)=>el.textContent=String(values[i]).padStart(2,'0'));}
