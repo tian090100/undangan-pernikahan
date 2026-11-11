@@ -57,5 +57,24 @@
   function updateCountdown(){const remaining=Math.max(0,Math.floor((ceremonyTime-Date.now())/1000));const values=[Math.floor(remaining/86400),Math.floor(remaining/3600)%24,Math.floor(remaining/60)%60,remaining%60];$$('.countdown b').forEach((el,i)=>el.textContent=String(values[i]).padStart(2,'0'));}
   updateCountdown();const countdownTimer=setInterval(updateCountdown,1000);
   window.addEventListener('pagehide',()=>clearInterval(countdownTimer));
+  const shareButton = $('#share-invitation');
+  shareButton.addEventListener('click', async () => {
+    const url = new URL('./', location.href).href;
+    if (navigator.share) {
+      try {
+        await navigator.share({title: 'Undangan Rexy & Indah', url});
+        return;
+      } catch (error) {
+        if (error.name === 'AbortError') return;
+      }
+    }
+    try {
+      await navigator.clipboard.writeText(url);
+      shareButton.textContent = 'Tautan disalin';
+      setTimeout(() => { shareButton.textContent = 'Bagikan Undangan'; }, 1800);
+    } catch {
+      window.prompt('Salin tautan undangan', url);
+    }
+  });
   if(params.get('preview')==='1')open();
 })();
