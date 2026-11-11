@@ -10,5 +10,6 @@ window.rexyGiftCatalog = Object.freeze([
  {id:'rice_cooker',name:'Rice Cooker',url:'https://s.shopee.co.id/5fpqZxXTKh',icon:'<path d="M31 45q0-20 39-20t39 20v46q0 18-39 18T31 91zM30 46h80M31 59H20v18h11m78-18h11v18h-11M58 16h25v9"/><rect x="56" y="64" width="28" height="21" rx="3"/>'},
  {id:'air_purifier',name:'Air Purifier',url:'https://s.shopee.co.id/9zypk5wmyw',icon:'<rect x="37" y="14" width="66" height="96" rx="12"/><path d="M48 29h44M48 60h44M48 69h44M48 78h44M48 87h44M48 96h44"/><circle cx="70" cy="45" r="4"/>'},
  {id:'air_cooler',name:'Air Cooler',url:'https://s.shopee.co.id/AKbg8nIrqS',icon:'<rect x="35" y="10" width="70" height="95" rx="6"/><path d="M45 25h50M45 40h50M45 49h50M45 58h50M45 67h50M45 76h50M46 90h16m12 0h16"/><circle cx="48" cy="111" r="4"/><circle cx="92" cy="111" r="4"/>'},
- {id:'ps5',name:'PS5',url:null,icon:'<path d="M38 10Q46 51 34 107H65V10zM65 10H79Q90 49 79 107H65z"/><path d="M57 18v79m25-4h14"/><path d="M94 68c-10-3-19 1-21 13l-3 14c-1 8 5 10 10 4l7-7h20l7 7c5 6 11 4 10-4l-3-14c-2-12-11-16-21-13zM82 79v10m-5-5h10m22-4h1m5 7h1"/>'}
+ {id:'tv',name:'Smart TV',url:'https://id.shp.ee/2YtFYe5k',icon:'<rect x="15" y="21" width="110" height="70" rx="6"/><path d="M20 81h100M50 105h40M57 91l-7 14m33-14 7 14"/>'},
+ {id:'ps5',name:'PS5',url:'https://id.shp.ee/Lu1yEVRW',icon:'<path d="M38 10Q46 51 34 107H65V10zM65 10H79Q90 49 79 107H65z"/><path d="M57 18v79m25-4h14"/><path d="M94 68c-10-3-19 1-21 13l-3 14c-1 8 5 10 10 4l7-7h20l7 7c5 6 11 4 10-4l-3-14c-2-12-11-16-21-13zM82 79v10m-5-5h10m22-4h1m5 7h1"/>'}
 ].map(Object.freeze));

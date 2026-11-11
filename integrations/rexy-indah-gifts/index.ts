@@ -11,7 +11,7 @@ Deno.serve(async req => {
   let b;try{const raw=await req.text();if(raw.length>2048)return reply({error:'invalid'},400);b=JSON.parse(raw)}catch{return reply({error:'invalid'},400)}
   const name=String(b.name||'').trim(),digits=String(b.phone||'').replace(/[^0-9]/g,'');
   const phone=digits.startsWith('0')?'62'+digits.slice(1):digits;
-  if(!["air_fryer","coffee_machine","knife_set","wok_pan","cookware_set","vacuum","vacuum_mop","rice_cooker","air_purifier","air_cooler","ps5"].includes(b.gift)||name.length<2||name.length>80||!/^62[0-9]{8,13}$/.test(phone)||b.website)return reply({error:'invalid'},400);
+  if(!["air_fryer","coffee_machine","knife_set","wok_pan","cookware_set","vacuum","vacuum_mop","rice_cooker","air_purifier","air_cooler","ps5","tv"].includes(b.gift)||name.length<2||name.length>80||!/^62[0-9]{8,13}$/.test(phone)||b.website)return reply({error:'invalid'},400);
   method='rexy_demo_book';body={p_gift:b.gift,p_name:name,p_phone:phone};
  }else if(req.method!=='GET')return reply({error:'method'},405);
  const key=Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
