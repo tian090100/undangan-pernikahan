@@ -48,7 +48,64 @@
     if(soundtrack.paused) playSoundtrack();
     else soundtrack.pause();
   });
-  $('#wish-form').addEventListener('submit',event=>{event.preventDefault();const data=new FormData(event.target);const entry=document.createElement('article'),name=document.createElement('b'),message=document.createElement('p');name.textContent=String(data.get('name')).slice(0,60);message.textContent=String(data.get('message')).slice(0,500);entry.append(name,message);$('#wish-list').prepend(entry);event.target.elements.message.value='';$('#wish-status').textContent='Pratinjau: ucapan tampil di tab ini saja; hilang setelah reload.';});
+  const wishEndpoint = 'https://ejdgpkgozhkteuofmwle.supabase.co/rest/v1/rexy_indah_wishes';
+  const wishHeaders = { apikey: 'sb_publishable_rw8BP21SoBjbWevbz6Be6Q_eFDGp2QL' };
+  const wishForm = $('#wish-form');
+  const wishList = $('#wish-list');
+  const wishStatus = $('#wish-status');
+  const wishButton = wishForm.querySelector('button');
+
+  async function loadWishes() {
+    try {
+      const response = await fetch(wishEndpoint + '?select=name,message&order=created_at.desc&limit=50', {
+        headers: wishHeaders, cache: 'no-store'
+      });
+      if (!response.ok) throw new Error('Unable to load wishes');
+      const wishes = await response.json();
+      wishList.replaceChildren(...wishes.map(({name, message}) => {
+        const entry = document.createElement('article');
+        const author = document.createElement('b');
+        const body = document.createElement('p');
+        author.textContent = name;
+        body.textContent = message;
+        entry.append(author, body);
+        return entry;
+      }));
+      if (!wishes.length) wishList.textContent = 'Belum ada ucapan.';
+    } catch {
+      if (!wishList.childElementCount) wishList.textContent = 'Ucapan belum bisa dimuat. Coba muat ulang halaman.';
+    }
+  }
+
+  wishForm.addEventListener('submit', async event => {
+    event.preventDefault();
+    if (wishButton.disabled) return;
+    const name = wishForm.elements.namedItem('name').value.trim();
+    const messageField = wishForm.elements.namedItem('message');
+    const message = messageField.value.trim();
+    if (!name || !message) {
+      wishStatus.textContent = 'Isi nama dan ucapan terlebih dahulu.';
+      return;
+    }
+    wishButton.disabled = true;
+    wishStatus.textContent = 'Mengirim ucapan…';
+    try {
+      const response = await fetch(wishEndpoint, {
+        method: 'POST',
+        headers: {...wishHeaders, 'Content-Type': 'application/json', Prefer: 'return=minimal'},
+        body: JSON.stringify({name, message})
+      });
+      if (!response.ok) throw new Error('Unable to save wish');
+      messageField.value = '';
+      wishStatus.textContent = 'Ucapan terkirim. Terima kasih!';
+      await loadWishes();
+    } catch {
+      wishStatus.textContent = 'Ucapan belum terkirim. Silakan coba lagi.';
+    } finally {
+      wishButton.disabled = false;
+    }
+  });
+  loadWishes();
   document.addEventListener('visibilitychange',()=>{syncTimers();if(document.hidden){video.pause();soundtrack.pause();}});
   reduced.addEventListener('change',syncTimers);
   window.addEventListener('pagehide',()=>{clearInterval(photoTimer);video.pause();soundtrack.pause();});
