@@ -120,7 +120,7 @@
     const guestName = params.get('to')?.trim().slice(0, 100);
     const recipient = guestName || 'Bapak/Ibu/Saudara/i';
     if (guestName) invitationUrl.searchParams.set('to', guestName);
-    const invitationText = `Kepada Yth.\n${recipient}\n\nShalom, Horas.\n\nTanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri pernikahan kami:\n\nRexy Pebe Sihombing, S.Kom. & Indah Tri Anastasya Manik, S.Kom.\n\nSabtu, 21 November 2026\nPemberkatan pukul 09.00 WIB di Gereja Katolik Stasi St. Yosef, Mandau\nResepsi & Adat pukul 11.00 WIB di Rumah Mempelai Pria\n\nBerikut link undangan kami untuk informasi lengkap acara:\n${invitationUrl.href}\n\nMerupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.\n\nTerima kasih.\nRexy & Indah`;
+    const invitationText = `Kepada Yth.\n*${recipient}*\n\nShalom, Horas.\n\nTanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri pernikahan kami.\n\nBerikut link undangan kami untuk informasi lengkap acara:\n${invitationUrl.href}\n\nMerupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.\n\nTerima kasih.\nRexy & Indah`;
     if (navigator.share) {
       try {
         await navigator.share({title: 'Undangan Pernikahan Rexy & Indah', text: invitationText});
