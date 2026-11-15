@@ -16,7 +16,7 @@ Deno.serve(async req=>{
   if(typeof b.token!=='string'||!/^[a-f0-9]{64}$/.test(b.token))return reply({error:'unauthorized'},401);
   params.p_token=b.token;
   if(b.action==='cancel'){
-   if(!["air_fryer","coffee_machine","knife_set","wok_pan","cookware_set","vacuum","vacuum_mop","rice_cooker","air_purifier","air_cooler","ps5","fridge","tv"].includes(b.gift)||typeof b.created!=='string'||!Number.isFinite(Date.parse(b.created)))return reply({error:'invalid'},400);
+   if(!["air_fryer","coffee_machine","knife_set","wok_pan","cookware_set","vacuum","vacuum_mop","rice_cooker","air_purifier","air_cooler","ps5","fridge","tv","ikea_wardrobe","shoe_cabinet"].includes(b.gift)||typeof b.created!=='string'||!Number.isFinite(Date.parse(b.created)))return reply({error:'invalid'},400);
    params.p_gift=b.gift;params.p_created=b.created;
   }
  }
