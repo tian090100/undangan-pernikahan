@@ -50,6 +50,12 @@
     "height": 1600
   },
   {
+    "src": "photos/rexy-indah-casual-02.jpg",
+    "alt": "Foto casual Rexy dan Indah",
+    "width": 1333,
+    "height": 2000
+  },
+  {
     "alt": "Foto pranikah Rexy dan Indah",
     "src": "photos/rexy-indah-04.jpg",
     "width": 1333,
@@ -70,12 +76,6 @@
   {
     "alt": "Foto pranikah Rexy dan Indah",
     "src": "photos/rexy-indah-07.jpg",
-    "width": 1333,
-    "height": 2000
-  },
-  {
-    "src": "photos/rexy-indah-casual-02.jpg",
-    "alt": "Foto casual Rexy dan Indah",
     "width": 1333,
     "height": 2000
   }
