@@ -2,46 +2,76 @@
  'use strict';
  const photos=[
   {
-    "src": "photos/rexy-indah-05.jpg",
     "alt": "Foto pranikah Rexy dan Indah",
-    "width": 1333,
-    "height": 2000
+    "src": "photos/gallery-ind09876.jpg",
+    "width": 1067,
+    "height": 1600
   },
   {
-    "src": "photos/rexy-indah-03.jpg",
-    "alt": "Foto pranikah Rexy dan Indah 3",
-    "width": 1333,
-    "height": 2000
+    "alt": "Foto pranikah Rexy dan Indah",
+    "src": "photos/gallery-ind09854.jpg",
+    "width": 1067,
+    "height": 1600
   },
   {
+    "alt": "Foto pranikah Rexy dan Indah",
+    "src": "photos/gallery-ind09821.jpg",
+    "width": 1067,
+    "height": 1600
+  },
+  {
+    "alt": "Foto pranikah Rexy dan Indah",
+    "src": "photos/gallery-ind09811.jpg",
+    "width": 1067,
+    "height": 1600
+  },
+  {
+    "alt": "Foto pranikah Rexy dan Indah",
+    "src": "photos/gallery-mg_1682.jpg",
+    "width": 1067,
+    "height": 1600
+  },
+  {
+    "alt": "Foto pranikah Rexy dan Indah",
+    "src": "photos/gallery-mg_1677.jpg",
+    "width": 1067,
+    "height": 1600
+  },
+  {
+    "alt": "Foto pranikah Rexy dan Indah",
+    "src": "photos/gallery-img00116.jpg",
+    "width": 1067,
+    "height": 1600
+  },
+  {
+    "alt": "Foto pranikah Rexy dan Indah",
+    "src": "photos/gallery-img00243.jpg",
+    "width": 1067,
+    "height": 1600
+  },
+  {
+    "alt": "Foto pranikah Rexy dan Indah",
     "src": "photos/rexy-indah-04.jpg",
-    "alt": "Foto pranikah Rexy dan Indah 4",
     "width": 1333,
     "height": 2000
   },
   {
-    "src": "photos/rexy-indah-08.jpg",
-    "alt": "Foto pranikah Rexy dan Indah 8",
-    "width": 1600,
-    "height": 1067
+    "alt": "Foto pranikah Rexy dan Indah",
+    "src": "photos/gallery-mg_1973.jpg",
+    "width": 1067,
+    "height": 1600
   },
   {
-    "src": "photos/rexy-indah-casual-01.jpg",
-    "alt": "Foto casual Rexy dan Indah 1",
+    "alt": "Foto pranikah Rexy dan Indah",
+    "src": "photos/gallery-mg_1919.jpg",
+    "width": 1066,
+    "height": 1600
+  },
+  {
+    "alt": "Foto pranikah Rexy dan Indah",
+    "src": "photos/rexy-indah-07.jpg",
     "width": 1333,
     "height": 2000
-  },
-  {
-    "src": "photos/rexy-indah-casual-03.jpg",
-    "alt": "Foto casual Rexy dan Indah 3",
-    "width": 1333,
-    "height": 2000
-  },
-  {
-    "src": "photos/rexy-indah-casual-04.jpg",
-    "alt": "Foto casual Rexy dan Indah 4",
-    "width": 1600,
-    "height": 1067
   }
 ];
  const section=document.createElement('section');section.className='scenery gallery';section.id='gallery';
