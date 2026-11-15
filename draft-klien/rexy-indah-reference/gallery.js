@@ -1,6 +1,55 @@
 (() => {
  'use strict';
- const photos=[{"src": "photos/rexy-indah-01.jpg", "alt": "Foto pranikah Rexy dan Indah 1", "width": 1333, "height": 2000}, {"src": "photos/rexy-indah-02.jpg", "alt": "Foto pranikah Rexy dan Indah 2", "width": 1333, "height": 2000}, {"src": "photos/rexy-indah-03.jpg", "alt": "Foto pranikah Rexy dan Indah 3", "width": 1333, "height": 2000}, {"src": "photos/rexy-indah-04.jpg", "alt": "Foto pranikah Rexy dan Indah 4", "width": 1333, "height": 2000}, {"src": "photos/rexy-indah-05.jpg", "alt": "Foto pranikah Rexy dan Indah 5", "width": 1333, "height": 2000}, {"src": "photos/rexy-indah-06.jpg", "alt": "Foto pranikah Rexy dan Indah 6", "width": 1333, "height": 2000}, {"src": "photos/rexy-indah-07.jpg", "alt": "Foto pranikah Rexy dan Indah 7", "width": 1333, "height": 2000}, {"src": "photos/rexy-indah-08.jpg", "alt": "Foto pranikah Rexy dan Indah 8", "width": 1600, "height": 1067}, {"src": "photos/rexy-indah-09.jpg", "alt": "Foto pranikah Rexy dan Indah 9", "width": 1125, "height": 2000}, {"src": "photos/rexy-indah-casual-01.jpg", "alt": "Foto casual Rexy dan Indah 1", "width": 1333, "height": 2000}, {"src": "photos/rexy-indah-casual-02.jpg", "alt": "Foto casual Rexy dan Indah 2", "width": 1333, "height": 2000}, {"src": "photos/rexy-indah-casual-03.jpg", "alt": "Foto casual Rexy dan Indah 3", "width": 1333, "height": 2000}, {"src": "photos/rexy-indah-casual-04.jpg", "alt": "Foto casual Rexy dan Indah 4", "width": 1600, "height": 1067}];
+ const photos=[
+  {
+    "src": "photos/rexy-indah-03.jpg",
+    "alt": "Foto pranikah Rexy dan Indah 3",
+    "width": 1333,
+    "height": 2000
+  },
+  {
+    "src": "photos/rexy-indah-04.jpg",
+    "alt": "Foto pranikah Rexy dan Indah 4",
+    "width": 1333,
+    "height": 2000
+  },
+  {
+    "src": "photos/rexy-indah-08.jpg",
+    "alt": "Foto pranikah Rexy dan Indah 8",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "src": "photos/rexy-indah-casual-01.jpg",
+    "alt": "Foto casual Rexy dan Indah 1",
+    "width": 1333,
+    "height": 2000
+  },
+  {
+    "src": "photos/rexy-indah-casual-02.jpg",
+    "alt": "Foto casual Rexy dan Indah 2",
+    "width": 1333,
+    "height": 2000
+  },
+  {
+    "src": "photos/rexy-indah-casual-03.jpg",
+    "alt": "Foto casual Rexy dan Indah 3",
+    "width": 1333,
+    "height": 2000
+  },
+  {
+    "src": "photos/rexy-indah-casual-04.jpg",
+    "alt": "Foto casual Rexy dan Indah 4",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "src": "photos/gallery-mg2020.jpg",
+    "alt": "Potret pranikah Rexy mengenakan busana adat Batak",
+    "width": 1200,
+    "height": 1800
+  }
+];
  const section=document.createElement('section');section.className='scenery gallery';section.id='gallery';
  section.innerHTML='<h2 class="gallery-heading">Our Moments</h2><p class="gallery-note">Potret kebersamaan Rexy dan Indah. Ketuk foto untuk memperbesar.</p><div class="gallery-grid"></div>';
  document.querySelector('#events').after(section);
