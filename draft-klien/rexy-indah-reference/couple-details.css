@@ -23,7 +23,7 @@
 
 /* Keep the cover copy clear of faces, including short mobile viewports. */
 .signature-cover .cover-artwork{background-position:50% 100%}
-.portrait.groom{background-image:url('photos/rexy-portrait-batak.jpg');background-size:cover;background-position:center}
+.portrait.groom{background-image:url('photos/rexy-portrait-batak.jpg');background-size:auto 120%;background-position:center 49%}
 .portrait.bride{background-image:url('photos/indah-portrait-batak.jpg');background-size:cover;background-position:center}
 
 /* Curving red-and-white gorga border based on the supplied ornament reference. */
@@ -134,4 +134,10 @@
   background-image: url('photos/closing-batak-hd.jpg');
   background-size: cover;
   background-position: center 40%;
+}
+
+#contents .events > h2,
+#contents .gallery-heading {
+  color: #79110e;
+  text-shadow: 0 1px 3px #fff8;
 }
