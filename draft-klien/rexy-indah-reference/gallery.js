@@ -72,6 +72,12 @@
     "src": "photos/rexy-indah-07.jpg",
     "width": 1333,
     "height": 2000
+  },
+  {
+    "src": "photos/rexy-indah-casual-02.jpg",
+    "alt": "Foto casual Rexy dan Indah",
+    "width": 1333,
+    "height": 2000
   }
 ];
  const section=document.createElement('section');section.className='scenery gallery';section.id='gallery';
