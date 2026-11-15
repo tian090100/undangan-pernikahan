@@ -141,3 +141,7 @@
   color: #79110e;
   text-shadow: 0 1px 3px #fff8;
 }
+
+.photo-carousel .photo.p1 { background-image: url('photos/rexy-indah-casual-02.jpg'); }
+.photo-carousel .photo.p2 { background-image: url('photos/verse-img00177.jpg'); }
+.photo-carousel .photo.p3 { background-image: url('photos/verse-img00175.jpg'); }

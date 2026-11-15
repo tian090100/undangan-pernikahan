@@ -2,6 +2,12 @@
  'use strict';
  const photos=[
   {
+    "src": "photos/rexy-indah-05.jpg",
+    "alt": "Foto pranikah Rexy dan Indah",
+    "width": 1333,
+    "height": 2000
+  },
+  {
     "src": "photos/rexy-indah-03.jpg",
     "alt": "Foto pranikah Rexy dan Indah 3",
     "width": 1333,
@@ -22,12 +28,6 @@
   {
     "src": "photos/rexy-indah-casual-01.jpg",
     "alt": "Foto casual Rexy dan Indah 1",
-    "width": 1333,
-    "height": 2000
-  },
-  {
-    "src": "photos/rexy-indah-casual-02.jpg",
-    "alt": "Foto casual Rexy dan Indah 2",
     "width": 1333,
     "height": 2000
   },
