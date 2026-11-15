@@ -42,12 +42,6 @@
     "alt": "Foto casual Rexy dan Indah 4",
     "width": 1600,
     "height": 1067
-  },
-  {
-    "src": "photos/gallery-mg2020.jpg",
-    "alt": "Potret pranikah Rexy mengenakan busana adat Batak",
-    "width": 1200,
-    "height": 1800
   }
 ];
  const section=document.createElement('section');section.className='scenery gallery';section.id='gallery';
