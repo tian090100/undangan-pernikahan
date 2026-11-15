@@ -113,7 +113,7 @@
   inset: -24px -18px;
   z-index: -1;
   pointer-events: none;
-  background: radial-gradient(ellipse, #211614e8 24%, #211614a0 58%, transparent 76%);
+  background: radial-gradient(ellipse, #79110ef5 24%, #79110ebf 58%, transparent 76%);
 }
 #contents .events > .intro::after,
 #contents .gallery > .gallery-note::after {
@@ -134,12 +134,6 @@
   background-image: url('photos/closing-batak-hd.jpg');
   background-size: cover;
   background-position: center 40%;
-}
-
-#contents .events > h2,
-#contents .gallery-heading {
-  color: #79110e;
-  text-shadow: 0 1px 3px #fff8;
 }
 
 .photo-carousel .photo.p1 { background-image: url('photos/rexy-indah-casual-02.jpg'); }
