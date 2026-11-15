@@ -113,7 +113,7 @@
   inset: -24px -18px;
   z-index: -1;
   pointer-events: none;
-  background: radial-gradient(ellipse, #79110ef5 24%, #79110ebf 58%, transparent 76%);
+  background: radial-gradient(ellipse, #662822e3 24%, #6628229e 58%, transparent 76%);
 }
 #contents .events > .intro::after,
 #contents .gallery > .gallery-note::after {
