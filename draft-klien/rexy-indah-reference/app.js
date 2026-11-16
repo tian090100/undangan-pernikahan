@@ -56,25 +56,26 @@
   const wishButton = wishForm.querySelector('button');
 
   const wishMore = $('#wish-more');
-  const wishPageSize = 10;
-  let visibleWishCount = wishPageSize;
+  const visibleWishCount = 10;
 
-  function showWishPage() {
-    Array.from(wishList.children).forEach((entry, index) => {
-      entry.hidden = index >= visibleWishCount;
-    });
-    wishMore.hidden = wishList.children.length <= visibleWishCount;
+  function updateWishArrow() {
+    wishMore.hidden = wishList.scrollHeight - wishList.clientHeight - wishList.scrollTop <= 1;
   }
 
-  wishMore.addEventListener('click', () => {
-    const firstNewWish = wishList.children[visibleWishCount];
-    visibleWishCount += wishPageSize;
-    showWishPage();
-    if (firstNewWish) {
-      firstNewWish.tabIndex = -1;
-      firstNewWish.focus();
+  function fitWishList() {
+    const tenthWish = wishList.children[visibleWishCount - 1];
+    if (wishList.children.length > visibleWishCount && wishList.clientWidth) {
+      wishList.style.maxHeight = Math.ceil(tenthWish.getBoundingClientRect().bottom -
+        wishList.getBoundingClientRect().top + wishList.scrollTop) + 'px';
+    } else {
+      wishList.style.maxHeight = '';
     }
-  });
+    updateWishArrow();
+  }
+
+  const wishSizes = new ResizeObserver(fitWishList);
+  wishSizes.observe(wishList);
+  wishList.addEventListener('scroll', updateWishArrow, { passive: true });
 
   async function loadWishes() {
     try {
@@ -93,7 +94,10 @@
         return entry;
       }));
       if (!wishes.length) wishList.textContent = 'Belum ada ucapan.';
-      showWishPage();
+      wishSizes.disconnect();
+      wishSizes.observe(wishList);
+      Array.from(wishList.children).slice(0, visibleWishCount).forEach(entry => wishSizes.observe(entry));
+      fitWishList();
     } catch {
       if (!wishList.childElementCount) wishList.textContent = 'Ucapan belum bisa dimuat. Coba muat ulang halaman.';
     }
