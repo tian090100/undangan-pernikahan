@@ -79,11 +79,19 @@
 
   async function loadWishes() {
     try {
-      const response = await fetch(wishEndpoint + '?select=name,message&order=created_at.desc&limit=50', {
-        headers: wishHeaders, cache: 'no-store'
-      });
-      if (!response.ok) throw new Error('Unable to load wishes');
-      const wishes = await response.json();
+      const wishes = [];
+      const pageSize = 100;
+      for (let offset = 0; ; offset += pageSize) {
+        const query = '?select=name,message&order=created_at.desc,name.asc,message.asc' +
+          '&limit=' + pageSize + '&offset=' + offset;
+        const response = await fetch(wishEndpoint + query, {
+          headers: wishHeaders, cache: 'no-store'
+        });
+        if (!response.ok) throw new Error('Unable to load wishes');
+        const page = await response.json();
+        wishes.push(...page);
+        if (page.length < pageSize) break;
+      }
       wishList.replaceChildren(...wishes.map(({name, message}) => {
         const entry = document.createElement('article');
         const author = document.createElement('b');
