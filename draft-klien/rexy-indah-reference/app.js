@@ -55,15 +55,26 @@
   const wishStatus = $('#wish-status');
   const wishButton = wishForm.querySelector('button');
 
-  const visibleWishCount = 10;
-  function fitWishList() {
-    if (wishList.children.length <= visibleWishCount || !wishList.clientWidth) return;
-    const lastVisible = wishList.children[visibleWishCount - 1];
-    const height = lastVisible.getBoundingClientRect().bottom -
-      wishList.getBoundingClientRect().top + wishList.scrollTop;
-    wishList.style.maxHeight = Math.ceil(height) + 'px';
+  const wishMore = $('#wish-more');
+  const wishPageSize = 10;
+  let visibleWishCount = wishPageSize;
+
+  function showWishPage() {
+    Array.from(wishList.children).forEach((entry, index) => {
+      entry.hidden = index >= visibleWishCount;
+    });
+    wishMore.hidden = wishList.children.length <= visibleWishCount;
   }
-  const wishSizes = new ResizeObserver(fitWishList);
+
+  wishMore.addEventListener('click', () => {
+    const firstNewWish = wishList.children[visibleWishCount];
+    visibleWishCount += wishPageSize;
+    showWishPage();
+    if (firstNewWish) {
+      firstNewWish.tabIndex = -1;
+      firstNewWish.focus();
+    }
+  });
 
   async function loadWishes() {
     try {
@@ -82,19 +93,7 @@
         return entry;
       }));
       if (!wishes.length) wishList.textContent = 'Belum ada ucapan.';
-      wishSizes.disconnect();
-      wishList.style.maxHeight = '';
-      const scrollable = wishes.length > visibleWishCount;
-      wishList.style.overflowY = scrollable ? 'auto' : '';
-      if (scrollable) {
-        wishList.tabIndex = 0;
-        wishList.setAttribute('aria-label', 'Daftar ucapan tamu');
-        Array.from(wishList.children).slice(0, visibleWishCount).forEach(entry => wishSizes.observe(entry));
-        fitWishList();
-      } else {
-        wishList.removeAttribute('tabindex');
-        wishList.removeAttribute('aria-label');
-      }
+      showWishPage();
     } catch {
       if (!wishList.childElementCount) wishList.textContent = 'Ucapan belum bisa dimuat. Coba muat ulang halaman.';
     }
